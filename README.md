@@ -71,5 +71,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 npx -p @storybook/cli sb init
 yarn storybook
 
-
+yarn add <package> --save
 
