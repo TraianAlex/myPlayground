@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "dotenv": "^8.2.0",
     "font-awesome": "^4.7.0",
     "install": "^0.13.0",
     "jquery": "^3.4.1",
@@ -21,12 +22,14 @@
     "react-scripts": "3.3.1",
     "react-select": "^3.0.8",
     "react-sidebar": "^3.0.2",
+    "react-slick": "^0.25.2",
     "react-tabs": "^3.1.0",
     "react-toastify": "^5.5.0",
     "react-tooltip": "^4.0.3",
     "react-window": "^1.8.5",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "slick-carousel": "^1.8.1",
     "uuid": "^3.4.0"
   },
   "scripts": {

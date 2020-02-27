@@ -7,11 +7,20 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './Eduonix/reducers';
 
-let store = createStore(
+import Profile from './GithubProfile/containers/App';
+import reducerProfile from './GithubProfile/reducers';
+
+let store1 = createStore(
   rootReducer,
   applyMiddleware(thunk)
 );
 
+let store2 = createStore(
+  reducerProfile,
+  applyMiddleware(thunk)
+);
+
 storiesOf('Redux', module)
-  .add('eduonix', () => <Provider store={store}><AppEx /></Provider>)
+  .add('eduonix', () => <Provider store={store1}><AppEx /></Provider>)
+  .add('githubProfile', () => <Provider store={store2}><Profile /></Provider>)
   ;

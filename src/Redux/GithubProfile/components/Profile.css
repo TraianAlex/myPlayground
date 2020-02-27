@@ -1,0 +1,11 @@
+.red-border {
+  border: red thin solid;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+.slick-slider img {
+  margin: 0 auto;
+}
