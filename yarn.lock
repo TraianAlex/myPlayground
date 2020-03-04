@@ -1593,6 +1593,14 @@
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/plugin-transform-typescript" "^7.8.3"
 
+"@babel/runtime-corejs2@^7.4.5":
+  version "7.8.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs2/-/runtime-corejs2-7.8.4.tgz#e4ed23a8be40fa26b97fb649deaba8144c987593"
+  integrity sha512-7jU2FgNqNHX6yTuU/Dr/vH5/O8eVL9U85MG5aDw1LzGfCvvhXC1shdXfVzCQDsoY967yrAKeLujRv7l8BU+dZA==
+  dependencies:
+    core-js "^2.6.5"
+    regenerator-runtime "^0.13.2"
+
 "@babel/runtime@7.3.4":
   version "7.3.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.4.tgz#73d12ba819e365fcf7fd152aed56d6df97d21c83"
@@ -3283,6 +3291,16 @@ ajv@^6.10.2:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+ajv@^6.7.0:
+  version "6.12.0"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.0.tgz#06d60b96d87b8454a5adaba86e7854da629db4b7"
+  integrity sha512-D6gFiFA0RRLyUbvijN74DWAjXSFxWKaWP7mldxkVhyhAV3+SWA9HEJPHQ2c9soIeTFJqcSdFDGFgdqs1iUU2Hw==
+  dependencies:
+    fast-deep-equal "^3.1.1"
+    fast-json-stable-stringify "^2.0.0"
+    json-schema-traverse "^0.4.1"
+    uri-js "^4.2.2"
+
 alphanum-sort@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
@@ -4099,6 +4117,92 @@ base@^0.11.1:
     isobject "^3.0.1"
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
+
+basscss-align@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/basscss-align/-/basscss-align-1.0.2.tgz#294aa689d6f99da86e4af4c5c2892870855c1c37"
+  integrity sha1-KUqmidb5nahuSvTFwokocIVcHDc=
+
+basscss-background-colors@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/basscss-background-colors/-/basscss-background-colors-2.1.0.tgz#e29eae329096d6b924050fef40e33a7d38416d67"
+  integrity sha1-4p6uMpCW1rkkBQ/vQOM6fThBbWc=
+  dependencies:
+    colors.css "^3.0.0"
+
+basscss-border@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/basscss-border/-/basscss-border-4.0.2.tgz#14b4506329b90cb14abe5f4d3473e9fe9202df2e"
+  integrity sha1-FLRQYym5DLFKvl9NNHPp/pIC3y4=
+
+basscss-colors@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/basscss-colors/-/basscss-colors-2.2.0.tgz#dccb773e272efe45df4a480962c8bd88b6a6b3e1"
+  integrity sha1-3Mt3Picu/kXfSkgJYsi9iLams+E=
+  dependencies:
+    colors.css "^3.0.0"
+
+basscss-flexbox@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/basscss-flexbox/-/basscss-flexbox-1.0.2.tgz#0f85e8c50618c023c5cff1227e6b3538fc0d9a32"
+  integrity sha512-AtG6yBmmza2nPo3x9X4/7rbW22gLmiSvYvirFs7Aspt1zp5FHwpRBz3BD2v/a3qPdmVM8OvOLVNWISGM6O50MA==
+
+basscss-grid@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/basscss-grid/-/basscss-grid-2.0.0.tgz#6f4c3198e786a38529f8362bc3b3bce5254c1369"
+  integrity sha1-b0wxmOeGo4Up+DYrw7O85SVME2k=
+
+basscss-hide@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/basscss-hide/-/basscss-hide-1.0.1.tgz#34bc138bba867c6c49ab8682a610ef495e47d750"
+  integrity sha1-NLwTi7qGfGxJq4aCphDvSV5H11A=
+
+basscss-layout@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/basscss-layout/-/basscss-layout-3.1.0.tgz#f9f392e480da66657d9fe5de9ca4c07c579c3a4e"
+  integrity sha1-+fOS5IDaZmV9n+XenKTAfFecOk4=
+
+basscss-margin@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/basscss-margin/-/basscss-margin-1.0.9.tgz#1e5800996ec8e8f362db4db52a51ece6d77a9fde"
+  integrity sha512-wpF8tXrtzU+iMtLvfSgYJlpkIxChOlay3YumoI+yJ6IiOe5uMmEGUG8FWAIkC8QalkKDAURAqHmQ4nbuyUvyag==
+
+basscss-padding@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/basscss-padding/-/basscss-padding-1.1.3.tgz#69db799414e6dd58bed83776952cc299e2e6874e"
+  integrity sha1-adt5lBTm3Vi+2Dd2lSzCmeLmh04=
+
+basscss-position@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/basscss-position/-/basscss-position-2.0.3.tgz#467180a1f8f386e9072ed8d08294d2a6e0ba4305"
+  integrity sha1-RnGAofjzhukHLtjQgpTSpuC6QwU=
+
+basscss-type-scale@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/basscss-type-scale/-/basscss-type-scale-1.0.6.tgz#f2a4d77252f7119414aa7baf9df290c6921c0542"
+  integrity sha512-93KOVRr5iX0e38d6+k2pQ8WW1IA5DigQhJextts4rwbSt2+cr+XrokGJ74HB8LevO54HMoc3VJ8M6oOR2puc8A==
+
+basscss-typography@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/basscss-typography/-/basscss-typography-3.0.4.tgz#ec946a2bad8dd1af97be9ea108ad4bb7be932464"
+  integrity sha512-PMCxUfYPpAj8gQV8qI09lfNp7eWNrKtQFkCN2fZjLyReSY/wnw8QP8irpvbJ67vSEhlkA6ZP8j7vmTDoxkyu8g==
+
+basscss@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/basscss/-/basscss-8.1.0.tgz#ede4ed0a8a8433fa18edda90a90d2311d1223695"
+  integrity sha512-SJ48HWDKqX1OnzeZgqwweFPVM98h0lNtvC+megWPCEJ1R6LIbx6dnj3rpCJueElVn9giWipZhoozMEBRAIlnUw==
+  dependencies:
+    basscss-align "^1.0.2"
+    basscss-border "^4.0.2"
+    basscss-flexbox "^1.0.2"
+    basscss-grid "^2.0.0"
+    basscss-hide "^1.0.1"
+    basscss-layout "^3.1.0"
+    basscss-margin "^1.0.9"
+    basscss-padding "^1.1.3"
+    basscss-position "^2.0.3"
+    basscss-type-scale "^1.0.6"
+    basscss-typography "^3.0.4"
 
 batch-processor@1.0.0:
   version "1.0.0"
@@ -4996,6 +5100,11 @@ color@^3.0.0:
     color-convert "^1.9.1"
     color-string "^1.5.2"
 
+colors.css@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/colors.css/-/colors.css-3.0.0.tgz#511cf42fb8a7199a8cbef49c88a4ea4f1d8f9efc"
+  integrity sha1-URz0L7inGZqMvvSciKTqTx2Pnvw=
+
 colors@^1.1.2:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/colors/-/colors-1.3.3.tgz#39e005d546afe01e01f9c4ca8fa50f686a01205d"
@@ -5241,6 +5350,11 @@ core-js@^2.4.0:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
   integrity sha512-klh/kDpwX8hryYL14M9w/xei6vrv6sE8gTHDG7/T/+SEovB/G4ejwcfE/CBzO6Edsu+OETZMZ3wcX/EjUkrl5A==
+
+core-js@^2.5.7, core-js@^2.6.5:
+  version "2.6.11"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
+  integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
 
 core-js@^3.0.1, core-js@^3.0.4:
   version "3.1.4"
@@ -5744,6 +5858,11 @@ decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+
+deep-diff@^0.3.5:
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.8.tgz#c01de63efb0eec9798801d40c7e0dae25b582c84"
+  integrity sha1-wB3mPvsO7JeYgB1Ax+Da4ltYLIQ=
 
 deep-equal@^1.0.1:
   version "1.0.1"
@@ -10480,6 +10599,11 @@ nan@^2.12.1:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.13.2.tgz#f51dc7ae66ba7d5d55e1e6d4d8092e802c9aefe7"
   integrity sha512-TghvYc72wlMGMVMluVo9WRJc0mB8KxxF/gZ4YYFy7V2ZQX9l7rgbPg7vjS9mt6U5HXODVFVI2bOduCzwOMv/lw==
 
+nanoid@^2.1.0:
+  version "2.1.11"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.1.11.tgz#ec24b8a758d591561531b4176a01e3ab4f0f0280"
+  integrity sha512-s/snB+WGm6uwi0WjsZdaVcuf3KJXlfGl2LcxgwkEwJF0D/BWzVWAZW/XY4bFaiR7s0Jk3FPvlnepg1H1b1UwlA==
+
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -13135,10 +13259,24 @@ react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-is@^16.9.0:
+react-is@^16.8.6, react-is@^16.9.0:
   version "16.13.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.0.tgz#0f37c3613c34fe6b37cd7f763a0d6293ab15c527"
   integrity sha512-GFMtL0vHkiBv9HluwNZTggSn/sCyEt9n02aM0dSAjGGyqyNlAyftYm4phPxdvCigG15JreC5biwxCgTAJZ7yAA==
+
+react-jsonschema-form@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/react-jsonschema-form/-/react-jsonschema-form-1.8.1.tgz#9c962f29a55b3fe071d8edf2fc3430f05f1b7ed9"
+  integrity sha512-aaDloxNAcGXOOOcdKOxxqEEn5oDlPUZgWcs8unXXB9vjBRgCF8rCm/wVSv1u2G5ih0j/BX6Ewd/WjI2g00lPdg==
+  dependencies:
+    "@babel/runtime-corejs2" "^7.4.5"
+    ajv "^6.7.0"
+    core-js "^2.5.7"
+    lodash "^4.17.15"
+    prop-types "^15.5.8"
+    react-is "^16.8.4"
+    react-lifecycles-compat "^3.0.4"
+    shortid "^2.2.14"
 
 react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
@@ -13349,6 +13487,16 @@ react-tabs@^3.1.0:
   dependencies:
     classnames "^2.2.0"
     prop-types "^15.5.0"
+
+react-test-renderer@^16.13.0:
+  version "16.13.0"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.13.0.tgz#39ba3bf72cedc8210c3f81983f0bb061b14a3014"
+  integrity sha512-NQ2S9gdMUa7rgPGpKGyMcwl1d6D9MCF0lftdI3kts6kkiX+qvpC955jNjAZXlIDTjnN9jwFI8A8XhRh/9v0spA==
+  dependencies:
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    react-is "^16.8.6"
+    scheduler "^0.19.0"
 
 react-textarea-autosize@^7.1.0:
   version "7.1.0"
@@ -13636,6 +13784,18 @@ recursive-readdir@2.2.2:
   integrity sha512-nRCcW9Sj7NuZwa2XvH9co8NPeXUBhZP7CRKJtU+cS6PW9FpCIFoI5ib0NT1ZrbNuPoRy0ylyCaUL8Gih4LSyFg==
   dependencies:
     minimatch "3.0.4"
+
+redux-localstorage@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/redux-localstorage/-/redux-localstorage-0.4.1.tgz#faf6d719c581397294d811473ffcedee065c933c"
+  integrity sha1-+vbXGcWBOXKU2BFHP/zt7gZckzw=
+
+redux-logger@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
+  integrity sha1-91VZZvMJjzyIYExEnPC69XeCdL8=
+  dependencies:
+    deep-diff "^0.3.5"
 
 redux-thunk@^2.3.0:
   version "2.3.0"
@@ -14171,6 +14331,14 @@ scheduler@^0.18.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
+scheduler@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.19.0.tgz#a715d56302de403df742f4a9be11975b32f5698d"
+  integrity sha512-xowbVaTPe9r7y7RUejcK73/j8tt2jfiyTednOvHbA8JoClvMYCp+r8QegLwK/n8zWQAtZb1fFnER4XLBZXrCxA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+
 schema-utils@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-1.0.0.tgz#0b79a93204d7b600d4b2850d1f66c2a34951c770"
@@ -14439,6 +14607,13 @@ shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
+
+shortid@^2.2.14:
+  version "2.2.15"
+  resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.15.tgz#2b902eaa93a69b11120373cd42a1f1fe4437c122"
+  integrity sha512-5EaCy2mx2Jgc/Fdn9uuDuNIIfWBpzY4XIlhoqtXF6qsf+/+SGZ+FxDdX/ZsMZiWupIWNqAEmiNY4RC+LSmCeOw==
+  dependencies:
+    nanoid "^2.1.0"
 
 side-channel@^1.0.2:
   version "1.0.2"
