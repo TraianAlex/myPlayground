@@ -12,6 +12,7 @@ import { RandomMeUsers } from './Components/ComposeComponent';
 import Paint from './Components/Paint/Paint';
 import Playground from './Components/Paint/Playground';
 import PicIndex from './PicSomeApp/PicIndex';
+import StateManager from './Context/App';
 
 storiesOf('Hooks', module)
   .add('intermediate state', () => <App1 />)
@@ -27,6 +28,7 @@ storiesOf('Hooks', module)
   .add('paint', () => <Paint />)
   .add('playground', () => <Playground />)
   .add('picStore', () => <PicIndex />)
+  .add('stateManagement', () => <StateManager />)
   ;
 
    // eslint-disable-next-line
