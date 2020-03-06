@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+
 import { App1 } from './Components/App1';
 import { App2 } from './Components/App2';
 import { App2Hooks } from './Components/App2Hooks';
@@ -13,6 +14,14 @@ import Paint from './Components/Paint/Paint';
 import Playground from './Components/Paint/Playground';
 import PicIndex from './PicSomeApp/PicIndex';
 import StateManager from './Context/App';
+
+import { Provider } from 'react-redux';
+import MiniStoreContext from './MiniStoreContext/App';
+import shopReducer from './MiniStoreContext/store/reducers';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
+const store6 = createStore(shopReducer, applyMiddleware(thunk));
 
 storiesOf('Hooks', module)
   .add('intermediate state', () => <App1 />)
@@ -29,6 +38,7 @@ storiesOf('Hooks', module)
   .add('playground', () => <Playground />)
   .add('picStore', () => <PicIndex />)
   .add('stateManagement', () => <StateManager />)
+  .add('miniStoreContext', () => <Provider store={store6}><MiniStoreContext /></Provider>)
   ;
 
    // eslint-disable-next-line

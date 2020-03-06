@@ -12,7 +12,6 @@ import { loadRecipes } from '../actions/recipes';
 import RootModal from './RootModal';
 // import '../styles/index.css';
 
-
 class App extends React.Component {
   // constructor(props) {
   //   super(props);
@@ -51,10 +50,7 @@ class App extends React.Component {
           <RootModal />
           <Switch>
             <Redirect from="/home" to="/" />
-            <Route
-              exact
-              path="/"
-              component={Home}
+            <Route exact path="/" component={Home}
               // render={() => (
                 // <Home
                   // state={this.state}
@@ -63,9 +59,7 @@ class App extends React.Component {
                 // />
               // )}
             />
-            <Route
-              path="/favorites"
-              component={Favorites}
+            <Route path="/favorites" component={Favorites}
               // render={() => (
                 // <Favorites
                   // state={this.state}

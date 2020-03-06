@@ -5,7 +5,7 @@ import ProductsPage from './pages/Products';
 import CartPage from './pages/Cart';
 import './App.css';
 
-class App extends Component {
+export class Academind extends Component {
   render() {
     return (
       <BrowserRouter>
@@ -18,5 +18,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

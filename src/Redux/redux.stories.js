@@ -11,10 +11,12 @@ import { store3 } from './MyRecipes/store';
 import Traversy from './CrashCourse/Traversy';
 import WithHooks from './WithHooks/App';
 import { store4 } from './WithHooks/store';
-import Academind from './Academind/App';
+
+import { Academind } from './Academind/Academind';
 import shopReducer from './Academind/store/reducers';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
+
 const store5 = createStore(shopReducer, applyMiddleware(reduxThunk));
 
 storiesOf('Redux', module)
