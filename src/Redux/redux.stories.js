@@ -11,6 +11,11 @@ import { store3 } from './MyRecipes/store';
 import Traversy from './CrashCourse/Traversy';
 import WithHooks from './WithHooks/App';
 import { store4 } from './WithHooks/store';
+import Academind from './Academind/App';
+import shopReducer from './Academind/store/reducers';
+import { createStore, applyMiddleware } from 'redux';
+import reduxThunk from 'redux-thunk';
+const store5 = createStore(shopReducer, applyMiddleware(reduxThunk));
 
 storiesOf('Redux', module)
   .add('eduonix', () => <Provider store={store1}><AppEx /></Provider>)
@@ -18,4 +23,5 @@ storiesOf('Redux', module)
   .add('myRecipes', () => <Provider store={store3}><App /></Provider>)
   .add('crushCoursePost', () => <Traversy />)
   .add('withHooks', () => <Provider store={store4}><WithHooks /></Provider>)
+  .add('miniStore', () => <Provider store={store5}><Academind /></Provider>)
   ;
