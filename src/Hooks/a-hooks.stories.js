@@ -21,6 +21,8 @@ import shopReducer from './MiniStoreContext/store/reducers';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
+import MaxIntro from './MaxIntro/App';
+
 const store6 = createStore(shopReducer, applyMiddleware(thunk));
 
 storiesOf('Hooks', module)
@@ -39,6 +41,7 @@ storiesOf('Hooks', module)
   .add('picStore', () => <PicIndex />)
   .add('stateManagement', () => <StateManager />)
   .add('miniStoreContext', () => <Provider store={store6}><MiniStoreContext /></Provider>)
+  .add('maxIntro', () => <MaxIntro />)
   ;
 
    // eslint-disable-next-line
