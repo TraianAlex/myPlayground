@@ -17,6 +17,9 @@ import shopReducer from './Academind/store/reducers';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 
+import TodoList from './ToDo/App';
+import Pager from './PagerApp/App';
+
 const store5 = createStore(shopReducer, applyMiddleware(reduxThunk));
 
 storiesOf('Redux', module)
@@ -26,4 +29,6 @@ storiesOf('Redux', module)
   .add('crushCoursePost', () => <Traversy />)
   .add('withHooks', () => <Provider store={store4}><WithHooks /></Provider>)
   .add('miniStore', () => <Provider store={store5}><Academind /></Provider>)
+  .add('todoListFlux', () => <TodoList />)
+  .add('pager', () => <Pager />)
   ;
