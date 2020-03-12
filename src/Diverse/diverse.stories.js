@@ -9,6 +9,7 @@ import { Toastify, Toastify2 } from './UsefulComp/Toastify';
 import { Modal1 } from './Modal/Modal1';
 import { GMap } from './GoogleMap/GMap';
 import { FetchEx } from './FetchBootstrap/FetchEx';
+import StarRating from './StarRating/App';
 
 storiesOf('Diverse', module)
   .add('game-xo', () => <Game1 />)
@@ -24,4 +25,5 @@ storiesOf('Diverse', module)
   .add('modal1', () => <Modal1 />)
   .add('googleMap', () => <GMap />)
   .add('fetchBoostrap', () => <FetchEx />)
+  .add('starRating', () => <StarRating />)
  ;
