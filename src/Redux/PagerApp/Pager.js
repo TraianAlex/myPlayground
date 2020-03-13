@@ -2,7 +2,7 @@ import React from 'react'; // , { PropTypes }
 import { connect } from 'react-redux';
 import * as actions from './actions';
 
-export function Pager({ page, prev, next }) {
+function Pager({ page, prev, next }) {
   // const prev = () => {
   //   if (page > 1) {
   //     dispatch({ type: actionTypes.PREV })
@@ -12,7 +12,7 @@ export function Pager({ page, prev, next }) {
   // const next = () => {
   //   dispatch({ type: actionTypes.NEXT })
   // }
-  console.log(page);
+ 
   return (
     <div className="pagination">
       <button disabled={page === 1} onClick={prev} type="button">&lt;</button>

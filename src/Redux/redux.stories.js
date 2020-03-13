@@ -19,6 +19,7 @@ import reduxThunk from 'redux-thunk';
 
 import TodoList from './ToDo/App';
 import Pager from './PagerApp/App';
+import TodoList2 from './ToDo2/Main';
 
 const store5 = createStore(shopReducer, applyMiddleware(reduxThunk));
 
@@ -31,4 +32,5 @@ storiesOf('Redux', module)
   .add('miniStore', () => <Provider store={store5}><Academind /></Provider>)
   .add('todoListFlux', () => <TodoList />)
   .add('pager', () => <Pager />)
+  .add('todoListRedux', () => <TodoList2 />)
   ;
