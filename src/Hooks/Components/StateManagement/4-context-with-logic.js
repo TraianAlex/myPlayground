@@ -11,6 +11,7 @@ function useCount() {
   const [count, setCount] = context
 
   const increment = () => setCount(c => c + 1)
+
   return {
     count,
     setCount,
@@ -21,6 +22,7 @@ function useCount() {
 function CountProvider(props) {
   const [count, setCount] = React.useState(0)
   const value = React.useMemo(() => [count, setCount], [count])
+
   return <CountContext.Provider value={value} {...props} />
 }
 
@@ -34,11 +36,13 @@ function CountProvider(props) {
 
 function Counter() {
   const {count, increment} = useCount()
+
   return <button onClick={increment}>{count}</button>
 }
 
 function CountDisplay() {
   const {count} = useCount()
+  
   return <div>The current counter count is {count}</div>
 }
 
