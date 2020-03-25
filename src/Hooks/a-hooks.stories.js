@@ -23,6 +23,12 @@ import thunk from 'redux-thunk';
 
 import MaxIntro from './MaxIntro/App';
 
+//import App from './Components/StateManagement/1-simple-count';
+//import App from './Components/StateManagement/2-lift-state';
+//import App from './Components/StateManagement/3-context';
+//import App from './Components/StateManagement/4-context-with-logic';
+import App from './Components/StateManagement/5-context-with-reducer';
+
 const store6 = createStore(shopReducer, applyMiddleware(thunk));
 
 storiesOf('Hooks', module)
@@ -42,6 +48,7 @@ storiesOf('Hooks', module)
   .add('stateManagement', () => <StateManager />)
   .add('miniStoreContext', () => <Provider store={store6}><MiniStoreContext /></Provider>)
   .add('maxIntro', () => <MaxIntro />)
+  .add('statemanagement', () => <App />)
   ;
 
    // eslint-disable-next-line
