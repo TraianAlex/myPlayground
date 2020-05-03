@@ -41,4 +41,8 @@ export class App extends Component {
   }
 }
 
-export default connect(state => state, actions)(App);
+export default connect(
+  // state => state,
+  state => state.toJS(),
+  actions
+)(App);
