@@ -3,7 +3,7 @@ export const NEW_INFO = 'NEW_INFO';
 
 export function fetchInfo() {
   return (dispatch) => {
-    return fetch('http://www.json-generator.com/api/json/get/cfaJCOVZGq?indent=2', {
+    return fetch('http://www.json-generator.com/api/json/get/bIbewYsMEi?indent=2', {
       method: 'GET'
     })
       .then(response => response.json())
@@ -17,7 +17,7 @@ export function fetchInfo() {
 
 export function postInfo() {
   return (dispatch) => {
-    return fetch('http://www.json-generator.com/api/json/get/cfaJCOVZGq?indent=2', {
+    return fetch('http://www.json-generator.com/api/json/get/bIbewYsMEi?indent=2', {
       method: 'POST',
       body: JSON.stringify({ hi: 'info' })
     })
