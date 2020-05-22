@@ -8,13 +8,13 @@ export class TopNumber extends React.Component {
     this.state = { 'highest': 0 };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.number > this.state.highest) {
       this.setState({ 'highest': nextProps.number });
     }
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  UNSAFE_componentWillUpdate(nextProps, nextState) {
     if (document.body.style.background !== yellow
       && this.state.highest >= 950 * 1000) {
       document.body.style.background = yellow;
