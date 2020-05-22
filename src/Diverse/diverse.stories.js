@@ -11,7 +11,7 @@ import { GMap } from './GoogleMap/GMap';
 import { FetchEx } from './FetchBootstrap/FetchEx';
 import StarRating from './StarRating/App';
 
-storiesOf('Diverse', module)
+storiesOf('Diverse/Div', module)
   .add('game-xo', () => <Game1 />)
   .add('paymentForm', () => <PaymentForm />)
   .add('listExample', () => <ListExample />)

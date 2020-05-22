@@ -23,7 +23,7 @@ import TodoList2 from './ToDo2/Main'; // Orelly
 
 const store5 = createStore(shopReducer, applyMiddleware(reduxThunk));
 
-storiesOf('Redux', module)
+storiesOf('Redux | Redux', module)
   .add('eduonix', () => <Provider store={store1}><AppEx /></Provider>)
   .add('githubProfile', () => <Provider store={store2}><Profile /></Provider>)
   .add('myRecipes', () => <Provider store={store3}><App /></Provider>)

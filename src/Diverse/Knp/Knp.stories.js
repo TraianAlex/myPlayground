@@ -4,5 +4,5 @@ import App from './Components/App';
 
 const shouldShowHearth = true;
 
-storiesOf('Knp', module)
+storiesOf('Diverse/Knp', module)
   .add('Weight Lifting', () => <App  withHearth={shouldShowHearth} />);
