@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import App from './Components/App';
+import App from '../Diverse/Knp/Components/App';
 
 const shouldShowHearth = true;
 

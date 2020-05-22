@@ -1,25 +1,25 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import AppEx from './Eduonix/containers/AppEx';
+import AppEx from '../Redux/Eduonix/containers/AppEx';
 import { Provider } from 'react-redux';
-import Profile from './GithubProfile/containers/App';
-import App from './MyRecipes/components/App';
-import { store as store1 } from './Eduonix/store';
-import { store as store2 } from './GithubProfile/store';
-import { store3 } from './MyRecipes/store';
-import Traversy from './CrashCourse/Traversy';
-import WithHooks from './WithHooks/App';
-import { store4 } from './WithHooks/store';
+import Profile from '../Redux/GithubProfile/containers/App';
+import App from '../Redux/MyRecipes/components/App';
+import { store as store1 } from '../Redux/Eduonix/store';
+import { store as store2 } from '../Redux/GithubProfile/store';
+import { store3 } from '../Redux/MyRecipes/store';
+import Traversy from '../Redux/CrashCourse/Traversy';
+import WithHooks from '../Redux/WithHooks/App';
+import { store4 } from '../Redux/WithHooks/store';
 
-import { Academind } from './Academind/Academind';
-import shopReducer from './Academind/store/reducers';
+import { Academind } from '../Redux/Academind/Academind';
+import shopReducer from '../Redux/Academind/store/reducers';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 
-import TodoList from './ToDo/App';
-import Pager from './PagerApp/App';
-import TodoList2 from './ToDo2/Main'; // Orelly
+import TodoList from '../Redux/ToDo/App';
+import Pager from '../Redux/PagerApp/App';
+import TodoList2 from '../Redux/ToDo2/Main'; // Orelly
 
 const store5 = createStore(shopReducer, applyMiddleware(reduxThunk));
 

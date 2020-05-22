@@ -1,33 +1,33 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { App1 } from './Components/App1';
-import { App2 } from './Components/App2';
-import { App2Hooks } from './Components/App2Hooks';
-import { Default } from './Components/Default';
-import { SetInterval, SetInterval2 } from './Components/SetInterval';
-import { Profile } from './Components/Profile/Profile';
-import { Resort } from './Components/Context';
-import { RandomMeUsers } from './Components/ComposeComponent';
+import { App1 } from '../Hooks/Components/App1';
+import { App2 } from '../Hooks/Components/App2';
+import { App2Hooks } from '../Hooks/Components/App2Hooks';
+import { Default } from '../Hooks/Components/Default';
+import { SetInterval, SetInterval2 } from '../Hooks/Components/SetInterval';
+import { Profile } from '../Hooks/Components/Profile/Profile';
+import { Resort } from '../Hooks/Components/Context';
+import { RandomMeUsers } from '../Hooks/Components/ComposeComponent';
 // import { NextProfile } from './Components/Profile/NextProfile/NextProfile';
-import Paint from './Components/Paint/Paint';
-import Playground from './Components/Paint/Playground';
-import PicIndex from './PicSomeApp/PicIndex';
-import StateManager from './Context/App';
+import Paint from '../Hooks/Components/Paint/Paint';
+import Playground from '../Hooks/Components/Paint/Playground';
+import PicIndex from '../Hooks/PicSomeApp/PicIndex';
+import StateManager from '../Hooks/Context/App';
 
 import { Provider } from 'react-redux';
-import MiniStoreContext from './MiniStoreContext/App';
-import shopReducer from './MiniStoreContext/store/reducers';
+import MiniStoreContext from '../Hooks/MiniStoreContext/App';
+import shopReducer from '../Hooks/MiniStoreContext/store/reducers';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import MaxIntro from './MaxIntro/App';
+import MaxIntro from '../Hooks/MaxIntro/App';
 
 //import App from './Components/StateManagement/1-simple-count';
 //import App from './Components/StateManagement/2-lift-state';
 //import App from './Components/StateManagement/3-context';
 //import App from './Components/StateManagement/4-context-with-logic';
-import App from './Components/StateManagement/5-context-with-reducer';
+import App from '../Hooks/Components/StateManagement/5-context-with-reducer';
 
 const store6 = createStore(shopReducer, applyMiddleware(thunk));
 

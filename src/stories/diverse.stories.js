@@ -1,15 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Game1 } from './Game-xo/Game1';
-import PaymentForm from './UsefulComp/CreditCard';
-import { ListExample, ColumnExample } from './UsefulComp/ListExample';
-import { TabSimple, TabComponent } from './UsefulComp/Tabs';
-import { SidebarComp, RespSidebar } from './UsefulComp/Sidebar';
-import { Toastify, Toastify2 } from './UsefulComp/Toastify';
-import { Modal1 } from './Modal/Modal1';
-import { GMap } from './GoogleMap/GMap';
-import { FetchEx } from './FetchBootstrap/FetchEx';
-import StarRating from './StarRating/App';
+import { Game1 } from '../Diverse/Game-xo/Game1';
+import PaymentForm from '../Diverse/UsefulComp/CreditCard';
+import { ListExample, ColumnExample } from '../Diverse/UsefulComp/ListExample';
+import { TabSimple, TabComponent } from '../Diverse/UsefulComp/Tabs';
+import { SidebarComp, RespSidebar } from '../Diverse/UsefulComp/Sidebar';
+import { Toastify, Toastify2 } from '../Diverse/UsefulComp/Toastify';
+import { Modal1 } from '../Diverse/Modal/Modal1';
+import { GMap } from '../Diverse/GoogleMap/GMap';
+import { FetchEx } from '../Diverse/FetchBootstrap/FetchEx';
+import StarRating from '../Diverse/StarRating/App';
 
 storiesOf('Diverse/Div', module)
   .add('game-xo', () => <Game1 />)
