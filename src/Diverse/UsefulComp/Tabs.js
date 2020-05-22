@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import ReactTooltip from 'react-tooltip';
 import 'react-tabs/style/react-tabs.css';
 
-export const TabSimple = () => (
+export const TabSimple = ({ title }) => (
   <Tabs>
     <TabList>
       <Tab>Title 1</Tab>
@@ -11,7 +11,7 @@ export const TabSimple = () => (
     </TabList>
 
     <TabPanel>
-      <h2>Any content 1 </h2>
+      <h2>{ title }</h2>
       <p data-tip="hello world">Tooltip</p>
       <ReactTooltip />
     </TabPanel>

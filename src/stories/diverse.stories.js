@@ -1,5 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { text } from '@storybook/addon-knobs';
+
 import { Game1 } from '../Diverse/Game-xo/Game1';
 import PaymentForm from '../Diverse/UsefulComp/CreditCard';
 import { ListExample, ColumnExample } from '../Diverse/UsefulComp/ListExample';
@@ -16,7 +18,10 @@ storiesOf('Diverse/Div', module)
   .add('paymentForm', () => <PaymentForm />)
   .add('listExample', () => <ListExample />)
   .add('columnExample', () => <ColumnExample />)
-  .add('tabs', () => <TabSimple />)
+  .add('tabs', () => {
+    const title = text('Title', 'Banner Title');
+    return <TabSimple title={title} />
+  })
   .add('tabs2', () => <TabComponent />)
   .add('sidebar', () => <SidebarComp />)
   .add('responsiveSidebar', () => <RespSidebar />)
