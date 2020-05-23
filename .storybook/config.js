@@ -1,6 +1,7 @@
 import { configure, addDecorator } from '@storybook/react';
-import '@storybook/addon-console';
+//import '@storybook/addon-console';
 import { withConsole, setConsoleOptions } from '@storybook/addon-console';
+import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
 
 function loadStories() {
@@ -11,6 +12,10 @@ function loadStories() {
 
 setConsoleOptions({panelExclude: []}); // HMR logs
 addDecorator((storyFn, context) => withConsole()(storyFn)(context)); // what stories they come
+
+addDecorator(withInfo({
+  inline: true
+}));
 
 addDecorator(withKnobs);
 

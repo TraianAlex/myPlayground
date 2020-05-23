@@ -8,10 +8,21 @@ import { Test1 } from '../BasicStory/Test1';
 import { Home } from '../BasicStory/Home';
 
 storiesOf('Diverse/Basic/Welcome', module)
+  .addParameters({
+    info: {
+      inline: false
+    }
+  })
   .add('to Storybook', () => <Welcome showApp={linkTo('Diverse/Basic/Button')} />);
 
 storiesOf('Diverse/Basic/Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
+  .add('with text', () => (
+    <Button onClick={action('clicked')}>Hello Button</Button>
+  ), {
+    info: {
+      inline: false
+    }
+  })
   .add('with some emoji', () => (
     <Button onClick={action('clicked')}>
       <span role="img" aria-label="so cool">😀 😎 👍 💯xx</span>
