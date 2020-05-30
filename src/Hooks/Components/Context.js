@@ -7,6 +7,7 @@ class Provider extends React.Component {
     name: "Snowtooth Mountain",
     status: "OPEN"
   }
+  
   render() {
     return (
       <Context.Provider value={{
@@ -21,6 +22,23 @@ class Provider extends React.Component {
   }
 }
 
+export class Resort extends React.Component {
+  render() {
+    return (
+      <Provider>
+        <div>
+          <Lift />
+        </div>
+      </Provider>
+    )
+  }
+}
+
+const Lift = props => (
+  <div>
+    <Trail />
+  </div>
+)
 
 const Trail = props => (
   <div>
@@ -35,21 +53,3 @@ const Trail = props => (
     </Context.Consumer>
   </div>
 )
-
-const Lift = props => (
-  <div>
-    <Trail />
-  </div>
-)
-
-export class Resort extends React.Component {
-  render() {
-    return (
-      <Provider>
-        <div>
-          <Lift />
-        </div>
-      </Provider>
-    )
-  }
-}
