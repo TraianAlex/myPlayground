@@ -1,4 +1,4 @@
-import { actionTypes } from '../actions/favorites';
+import { actionTypes } from "../actions/favorites";
 
 const initialState = [1, 2];
 
@@ -7,7 +7,7 @@ const ACTION_HANDLERS = {
     const idx = state.indexOf(action.id);
 
     if (idx !== -1) {
-      return state.filter(f => f !== action.id);
+      return state.filter((f) => f !== action.id);
     }
     return [...state, action.id];
   },

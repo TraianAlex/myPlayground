@@ -1,5 +1,5 @@
 const initialState = {
-  someData: 'test!!',
+  someData: "test!!",
 };
 
 const ACTION_HANDLERS = {};

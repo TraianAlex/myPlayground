@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import classNames from "classnames";
 
 const RecipeDetail = ({ recipe, loading, className, style }) => {
   if (loading) {
     return (
       <p
         style={style}
-        className={classNames('h3 p2 bg-white italic center', className)}
+        className={classNames("h3 p2 bg-white italic center", className)}
       >
         Loading recipe...
       </p>
@@ -19,7 +19,7 @@ const RecipeDetail = ({ recipe, loading, className, style }) => {
     return (
       <p
         style={style}
-        className={classNames('h3 p2 bg-white italic center', className)}
+        className={classNames("h3 p2 bg-white italic center", className)}
       >
         No recipe selected.
       </p>
@@ -27,7 +27,7 @@ const RecipeDetail = ({ recipe, loading, className, style }) => {
   }
 
   return (
-    <div style={style} className={classNames('p2 bg-white', className)}>
+    <div style={style} className={classNames("p2 bg-white", className)}>
       <h2 className="h2">{recipe.name}</h2>
       <div className="flex flex-column">
         <img alt={recipe.name} className="fit" src={recipe.image} />
@@ -37,12 +37,16 @@ const RecipeDetail = ({ recipe, loading, className, style }) => {
         </div>
         <h3>Ingredients</h3>
         <ul>
-          {recipe.ingredients.map(ingredient => (
+          {recipe.ingredients.map((ingredient) => (
             <li key={ingredient}>{ingredient}</li>
           ))}
         </ul>
         <h3>Steps</h3>
-        <ol>{recipe.steps.map(step => <li key={step}>{step}</li>)}</ol>
+        <ol>
+          {recipe.steps.map((step) => (
+            <li key={step}>{step}</li>
+          ))}
+        </ol>
         <Link
           className="right-align"
           to={`/recipe/${recipe.id}`}

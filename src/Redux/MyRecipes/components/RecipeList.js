@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import RecipeListItem from './RecipeListItem';
+import React from "react";
+import PropTypes from "prop-types";
+import RecipeListItem from "./RecipeListItem";
 
 const RecipeList = ({ recipes, favorites, className, style, ...props }) => (
   <div className={className} style={style}>
     <ul className="list-reset">
-      {recipes.map(recipe => (
+      {recipes.map((recipe) => (
         <RecipeListItem
           key={recipe.id}
           recipe={recipe}

@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import RecipeDetail from './RecipeDetail';
+import React from "react";
+import PropTypes from "prop-types";
+import RecipeDetail from "./RecipeDetail";
 
 class Recipe extends React.Component {
   constructor(props) {
@@ -18,8 +18,8 @@ class Recipe extends React.Component {
     this.setState({ loading: true });
 
     fetch(`${process.env.API_URL}/v1/recipes/${id}`)
-      .then(res => res.json())
-      .then(recipe => {
+      .then((res) => res.json())
+      .then((recipe) => {
         this.setState({ recipe, loading: false });
       });
   }

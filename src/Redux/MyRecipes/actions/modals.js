@@ -1,6 +1,6 @@
 export const actionTypes = {
-  SHOW_MODAL: 'SHOW_MODAL',
-  HIDE_MODAL: 'HIDE_MODAL',
+  SHOW_MODAL: "SHOW_MODAL",
+  HIDE_MODAL: "HIDE_MODAL",
 };
 
 export const showModal = (modalType, modalProps) => ({

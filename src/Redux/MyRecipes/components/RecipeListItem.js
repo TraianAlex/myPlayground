@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const RecipeListItem = ({ recipe, favorited, onClick, onFavorited }) => (
   <li
@@ -12,12 +12,12 @@ const RecipeListItem = ({ recipe, favorited, onClick, onFavorited }) => (
   >
     <span
       role="button"
-      onClick={e => {
+      onClick={(e) => {
         e.stopPropagation();
         onFavorited(recipe.id);
       }}
     >
-      {favorited ? '✅' : '⬜️'}
+      {favorited ? "✅" : "⬜️"}
     </span>
     <span>{recipe.name}</span>
     <span>{recipe.category}</span>

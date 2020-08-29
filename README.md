@@ -67,9 +67,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-
 npx -p @storybook/cli sb init
 yarn storybook
 
 yarn add <package> --save
 
+npm install -g json-server
+json-server --port 3001 generate.js
+
+http://localhost:3001/posts
