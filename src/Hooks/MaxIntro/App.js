@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
-import CharPicker from './components/CharPicker';
-import Character from './components/Character';
+import React, { useState } from "react";
+import CharPicker from "./components/CharPicker";
+import Character from "./components/Character";
 
-const App = props => {
-  // const [state, setState] = useState({
-  //   selectedCharacter: 1,
-  //   destroyed: false
-  // });
+const App = (props) => {
   const [destroyed, setDestroyed] = useState(false);
 
   const [selectedCharacter, setSelectedCharacter] = useState(1);
 
-  const [chosenSide, setChosenSide] = useState('light');
+  const [chosenSide, setChosenSide] = useState("light");
 
-  const sideHandler = side => {
+  const sideHandler = (side) => {
     setChosenSide(side);
   };
 
-  const charSelectHandler = event => {
+  const charSelectHandler = (event) => {
     const charId = event.target.value;
     setSelectedCharacter(charId);
   };
@@ -34,9 +30,9 @@ const App = props => {
         onCharSelect={charSelectHandler}
       />
       <Character selectedChar={selectedCharacter} />
-      <button onClick={sideHandler.bind(this, 'light')}>Light Side</button>
-      <button onClick={sideHandler.bind(this, 'dark')}>Dark Side</button>
-      {chosenSide === 'dark' && (
+      <button onClick={sideHandler.bind(this, "light")}>Light Side</button>
+      <button onClick={sideHandler.bind(this, "dark")}>Dark Side</button>
+      {chosenSide === "dark" && (
         <button onClick={destructionHandler}>DESTROY!</button>
       )}
     </React.Fragment>

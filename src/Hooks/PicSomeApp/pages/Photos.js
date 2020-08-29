@@ -1,23 +1,17 @@
-import React, { useContext } from "react"
+import React, { useContext } from "react";
 
-import Image from "../components/Image"
-import { CartContext } from "../CartContext"
-import { getClass } from "../utils"
+import Image from "../components/Image";
+import { CartContext } from "../CartContext";
+import { getClass } from "../utils";
 
 function Photos() {
-  const { allPhotos } = useContext(CartContext)
+  const { allPhotos } = useContext(CartContext);
 
-  const images = allPhotos.map(
-    (img, i) => (
-      <Image key={img.id} img={img} className={getClass(i)} />
-    )
-  )
+  const images = allPhotos.map((img, i) => (
+    <Image key={img.id} img={img} className={getClass(i)} />
+  ));
 
-  return (
-    <main className="photos">
-      {images}
-    </main>
-  )
+  return <main className="photos">{images}</main>;
 }
 
-export default Photos
+export default Photos;

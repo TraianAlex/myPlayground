@@ -1,41 +1,41 @@
-import React from 'react'
+import React from "react";
 
 // src/count/count-context.js
 
-const CountContext = React.createContext()
+const CountContext = React.createContext();
 
 function countReducer(state, action) {
   switch (action.type) {
-    case 'INCREMENT': {
-      return {count: state.count + 1}
+    case "INCREMENT": {
+      return { count: state.count + 1 };
     }
     default: {
-      throw new Error(`Unsupported action type: ${action.type}`)
+      throw new Error(`Unsupported action type: ${action.type}`);
     }
   }
 }
 
 function CountProvider(props) {
-  const [state, dispatch] = React.useReducer(countReducer, {count: 0})
-  const value = React.useMemo(() => [state, dispatch], [state])
+  const [state, dispatch] = React.useReducer(countReducer, { count: 0 });
+  const value = React.useMemo(() => [state, dispatch], [state]);
 
-  return <CountContext.Provider value={value} {...props} />
+  return <CountContext.Provider value={value} {...props} />;
 }
 
 function useCount() {
-  const context = React.useContext(CountContext)
+  const context = React.useContext(CountContext);
   if (!context) {
-    throw new Error(`useCount must be used within a CountProvider`)
+    throw new Error(`useCount must be used within a CountProvider`);
   }
-  const [state, dispatch] = context
+  const [state, dispatch] = context;
 
-  const increment = () => dispatch({type: 'INCREMENT'})
+  const increment = () => dispatch({ type: "INCREMENT" });
 
   return {
     state,
     dispatch,
     increment,
-  }
+  };
 }
 
 // export {CountProvider, useCount}
@@ -48,19 +48,19 @@ function useCount() {
 
 function Counter() {
   const {
-    state: {count},
+    state: { count },
     increment,
-  } = useCount()
+  } = useCount();
 
-  return <button onClick={increment}>{count}</button>
+  return <button onClick={increment}>{count}</button>;
 }
 
 function CountDisplay() {
   const {
-    state: {count},
-  } = useCount()
-  
-  return <div>The current counter count is {count}</div>
+    state: { count },
+  } = useCount();
+
+  return <div>The current counter count is {count}</div>;
 }
 
 function App() {
@@ -71,13 +71,10 @@ function App() {
         <Counter />
       </CountProvider>
     </div>
-  )
+  );
 }
 
-export default App
-
-
-
+export default App;
 
 /*
 function App() {

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 class ProfilePage extends React.Component {
   showMessage = () => {
-    alert('Followed ' + this.props.user);
+    alert("Followed " + this.props.user);
   };
 
   handleClick = () => {

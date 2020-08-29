@@ -1,4 +1,9 @@
-import React, { useDeferredValue, useState, useTransition, Suspense } from "react";
+import React, {
+  useDeferredValue,
+  useState,
+  useTransition,
+  Suspense,
+} from "react";
 import "./NextProfile.css";
 import { fetchProfileData } from "./fakeApi";
 
@@ -56,7 +61,7 @@ function ProfileTimeline({ isStale, resource }) {
   const posts = resource.posts.read();
   return (
     <ul style={{ opacity: isStale ? 0.7 : 1 }}>
-      {posts.map(post => (
+      {posts.map((post) => (
         <li key={post.id}>{post.text}</li>
       ))}
     </ul>

@@ -1,14 +1,14 @@
 import React from "react";
 
 function longResolve() {
-  return new Promise(res => {
+  return new Promise((res) => {
     setTimeout(res, 3000);
   });
 }
 
 export class App2 extends React.Component {
   state = {
-    count: 0
+    count: 0,
   };
 
   componentDidMount() {
@@ -22,7 +22,7 @@ export class App2 extends React.Component {
       <div>
         <button
           onClick={() => {
-            this.setState(state => ({ count: state.count + 1 }));
+            this.setState((state) => ({ count: state.count + 1 }));
           }}
         >
           Count: {this.state.count}

@@ -1,5 +1,5 @@
-import React from 'react';
-import './Game1.css';
+import React from "react";
+import "./Game1.css";
 
 function Square(props) {
   return (
@@ -48,11 +48,11 @@ export class Game1 extends React.Component {
     this.state = {
       history: [
         {
-          squares: Array(9).fill(null)
-        }
+          squares: Array(9).fill(null),
+        },
       ],
       stepNumber: 0,
-      xIsNext: true
+      xIsNext: true,
     };
   }
 
@@ -67,18 +67,18 @@ export class Game1 extends React.Component {
     this.setState({
       history: history.concat([
         {
-          squares: squares
-        }
+          squares: squares,
+        },
       ]),
       stepNumber: history.length,
-      xIsNext: !this.state.xIsNext
+      xIsNext: !this.state.xIsNext,
     });
   }
 
   jumpTo(step) {
     this.setState({
       stepNumber: step,
-      xIsNext: (step % 2) === 0
+      xIsNext: step % 2 === 0,
     });
   }
 
@@ -88,7 +88,7 @@ export class Game1 extends React.Component {
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
-      const desc = move ? 'Go to move #' + move : 'Go to game start';
+      const desc = move ? "Go to move #" + move : "Go to game start";
       return (
         <li key={move}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
@@ -108,22 +108,24 @@ export class Game1 extends React.Component {
         <div className="game-board">
           <Board
             squares={current.squares}
-            onClick={i => this.handleClick(i)}
+            onClick={(i) => this.handleClick(i)}
           />
         </div>
         <div className="game-info">
           <div>{status}</div>
           <ol>{moves}</ol>
         </div>
-        <div id="errors" style={{
-                            background: "#c00",
-                            color: "#fff",
-                            display: "none",
-                            margin: "-20px -20px 20px",
-                            padding: "20px",
-                            whiteSpace: "pre-wrap"
-                          }}>
-        </div>
+        <div
+          id="errors"
+          style={{
+            background: "#c00",
+            color: "#fff",
+            display: "none",
+            margin: "-20px -20px 20px",
+            padding: "20px",
+            whiteSpace: "pre-wrap",
+          }}
+        ></div>
       </div>
     );
   }
@@ -140,7 +142,7 @@ function calculateWinner(squares) {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 6]
+    [2, 4, 6],
   ];
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
@@ -155,30 +157,33 @@ function calculateWinner(squares) {
 
 const errors = {};
 
-window.addEventListener('mousedown', function(e) {
-  document.body.classList.add('mouse-navigation');
-  document.body.classList.remove('kbd-navigation');
+window.addEventListener("mousedown", function(e) {
+  document.body.classList.add("mouse-navigation");
+  document.body.classList.remove("kbd-navigation");
 });
-window.addEventListener('keydown', function(e) {
+window.addEventListener("keydown", function(e) {
   if (e.keyCode === 9) {
-    document.body.classList.add('kbd-navigation');
-    document.body.classList.remove('mouse-navigation');
+    document.body.classList.add("kbd-navigation");
+    document.body.classList.remove("mouse-navigation");
   }
 });
-window.addEventListener('click', function(e) {
-  if (e.target.tagName === 'A' && e.target.getAttribute('href') === '#') {
+window.addEventListener("click", function(e) {
+  if (e.target.tagName === "A" && e.target.getAttribute("href") === "#") {
     e.preventDefault();
   }
 });
 window.onerror = function(message, source, line, col, error) {
-  var text = error ? error.stack || error : message + ' (at ' + source + ':' + line + ':' + col + ')';
-  errors.textContent += text + '\n';
-  errors.style.display = '';
+  var text = error
+    ? error.stack || error
+    : message + " (at " + source + ":" + line + ":" + col + ")";
+  errors.textContent += text + "\n";
+  errors.style.display = "";
 };
 console.error = (function(old) {
   return function error() {
-    errors.textContent += Array.prototype.slice.call(arguments).join(' ') + '\n';
-    errors.style.display = '';
+    errors.textContent +=
+      Array.prototype.slice.call(arguments).join(" ") + "\n";
+    errors.style.display = "";
     old.apply(this, arguments);
-  }
+  };
 })(console.error);

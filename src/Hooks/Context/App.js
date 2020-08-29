@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import MovieList from './MovieList';
-import Nav from './Nav';
-import { MovieProvider } from './MovieContext';
-import AddMovie from './AddMovie';
+import React, { Component } from "react";
+import MovieList from "./MovieList";
+import Nav from "./Nav";
+import { MovieProvider } from "./MovieContext";
+import AddMovie from "./AddMovie";
 
 export default class App extends Component {
   render() {
@@ -14,7 +14,6 @@ export default class App extends Component {
           <MovieList />
         </div>
       </MovieProvider>
-    )
+    );
   }
 }
-

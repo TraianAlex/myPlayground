@@ -1,40 +1,40 @@
 import React, { Component } from "react";
-import { Navbar, Nav, NavDropdown, Table } from 'react-bootstrap';
-import Select from 'react-select';
+import { Navbar, Nav, NavDropdown, Table } from "react-bootstrap";
+import Select from "react-select";
 // import 'react-select/dist/react-select.css';
 
 export class FetchEx extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedOption: '',
-      jsonList: []
+      selectedOption: "",
+      jsonList: [],
     };
   }
 
   componentDidMount() {
-    fetch('http://www.json-generator.com/api/json/get/cfaJCOVZGq?indent=2', {
-      method: 'GET'
+    fetch("http://www.json-generator.com/api/json/get/cfaJCOVZGq?indent=2", {
+      method: "GET",
     })
-      .then(response => response.json())
-      .then(json => {
-        console.log(json)
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
         this.setState({
-          jsonList: json
+          jsonList: json,
         });
       })
-      .catch(error => console.log(error));
+      .catch((error) => console.log(error));
   }
 
   handleChange(selectedOption) {
     this.setState({
-      selectedOption: selectedOption ? selectedOption : ''
+      selectedOption: selectedOption ? selectedOption : "",
     });
   }
 
   render() {
-    const selectList = this.state.jsonList.map(item => {
-      return { value: item.name, label: item.name }
+    const selectList = this.state.jsonList.map((item) => {
+      return { value: item.name, label: item.name };
     });
     return (
       <div>
@@ -47,10 +47,16 @@ export class FetchEx extends Component {
               <Nav.Link href="#link">Link</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Something
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>
@@ -89,10 +95,12 @@ export class FetchEx extends Component {
                       </tr>
                     </thead>
                     <tbody>
-                      
                       {// eslint-disable-next-line array-callback-return
-                      this.state.jsonList.map(item => {
-                        if (this.state.selectedOption === '' || item.name === this.state.selectedOption.value) {
+                      this.state.jsonList.map((item) => {
+                        if (
+                          this.state.selectedOption === "" ||
+                          item.name === this.state.selectedOption.value
+                        ) {
                           return (
                             <tr key={item.name}>
                               <td>{item.name}</td>
@@ -100,7 +108,7 @@ export class FetchEx extends Component {
                               <td>{item.age}</td>
                               <td>{item.company}</td>
                             </tr>
-                          )
+                          );
                         }
                         // return '';
                       })}

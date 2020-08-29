@@ -6,7 +6,7 @@ Modal.setAppElement("#root");
 
 export class Modal1 extends React.Component {
   state = {
-    modalIsOpen: false
+    modalIsOpen: false,
   };
 
   openModal = () => {

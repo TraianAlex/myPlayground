@@ -1,30 +1,25 @@
-import React from 'react';
-import { FixedSizeList as List } from 'react-window';
-import './ListExample.css';
- 
+import React from "react";
+import { FixedSizeList as List } from "react-window";
+import "./ListExample.css";
+
 const Row = ({ index, style }) => (
-  <div className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
+  <div className={index % 2 ? "ListItemOdd" : "ListItemEven"} style={style}>
     Row {index}
   </div>
 );
- 
+
 export const ListExample = () => (
-  <List
-    height={500}
-    itemCount={1000}
-    itemSize={35}
-    width={500}
-  >
+  <List height={500} itemCount={1000} itemSize={35} width={500}>
     {Row}
   </List>
 );
 
 const Column = ({ index, style }) => (
-  <div className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
+  <div className={index % 2 ? "ListItemOdd" : "ListItemEven"} style={style}>
     Column {index}
   </div>
 );
- 
+
 export const ColumnExample = () => (
   <List
     height={100}

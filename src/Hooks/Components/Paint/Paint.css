@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font-family: system-ui, 'Helevetica Neue', Arial, sans-serif;
+  font-family: system-ui, "Helevetica Neue", Arial, sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -41,7 +41,8 @@ header > div {
   margin-left: 5px;
   border-bottom: 1px solid transparent;
 }
-.header-name input:hover, .header-name input:focus {
+.header-name input:hover,
+.header-name input:focus {
   border-bottom: 1px solid gray;
   outline: none;
 }
@@ -74,7 +75,7 @@ header > div {
   position: absolute;
 }
 .color-picker span {
-  content: '';
+  content: "";
   display: inline-block;
   width: 1.5rem;
   height: 1.5rem;

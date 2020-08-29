@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import Summary from './Summary';
+import React, { useState, useEffect } from "react";
+import Summary from "./Summary";
 
-const Character = props => {
+const Character = (props) => {
   const [loadedCharacter, setLoadedCharacter] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log('Rendering...');
+  console.log("Rendering...");
 
   // shouldComponentUpdate(nextProps, nextState) {
   //   console.log('shouldComponentUpdate');
@@ -18,32 +18,32 @@ const Character = props => {
 
   const fetchData = () => {
     console.log(
-      'Sending Http request for new character with id ' + props.selectedChar
+      "Sending Http request for new character with id " + props.selectedChar
     );
     setIsLoading(true);
-    fetch('https://swapi.co/api/people/' + props.selectedChar)
-      .then(response => {
+    fetch("https://swapi.co/api/people/" + props.selectedChar)
+      .then((response) => {
         if (!response.ok) {
-          throw new Error('Could not fetch person!');
+          throw new Error("Could not fetch person!");
         }
         return response.json();
       })
-      .then(charData => {
+      .then((charData) => {
         const loadedCharacter = {
           id: props.selectedChar,
           name: charData.name,
           height: charData.height,
           colors: {
             hair: charData.hair_color,
-            skin: charData.skin_color
+            skin: charData.skin_color,
           },
           gender: charData.gender,
-          movieCount: charData.films.length
+          movieCount: charData.films.length,
         };
         setIsLoading(false);
         setLoadedCharacter(loadedCharacter);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         setIsLoading(false);
       });
@@ -63,14 +63,14 @@ const Character = props => {
   useEffect(() => {
     fetchData();
     return () => {
-      console.log('Cleaning up...');
+      console.log("Cleaning up...");
     };
     // eslint-disable-next-line
   }, [props.selectedChar]);
 
   useEffect(() => {
     return () => {
-      console.log('component did unmount');
+      console.log("component did unmount");
     };
   }, []);
 

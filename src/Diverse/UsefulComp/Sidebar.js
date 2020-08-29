@@ -6,7 +6,7 @@ export class SidebarComp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sidebarOpen: true
+      sidebarOpen: true,
     };
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }
@@ -38,7 +38,7 @@ export class RespSidebar extends React.Component {
     super(props);
     this.state = {
       sidebarDocked: mql.matches,
-      sidebarOpen: false
+      sidebarOpen: false,
     };
 
     this.mediaQueryChanged = this.mediaQueryChanged.bind(this);

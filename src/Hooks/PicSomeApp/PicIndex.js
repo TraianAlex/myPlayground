@@ -1,8 +1,8 @@
-import React from "react"
-import { BrowserRouter as Router } from "react-router-dom"
-import { CartContextProvider } from "./CartContext"
-import App from "./App"
-import './PicIndex.css';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { CartContextProvider } from "./CartContext";
+import App from "./App";
+import "./PicIndex.css";
 
 function PicIndex() {
   return (
@@ -11,10 +11,10 @@ function PicIndex() {
         <App />
       </Router>
     </CartContextProvider>
-  )
+  );
 }
 
-export default PicIndex
+export default PicIndex;
 
 // https://scrimba.com/p/pBwJrS7/cZP2D4UD
 

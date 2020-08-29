@@ -1,24 +1,27 @@
-import React from 'react';
+import React from "react";
 
-const Context = React.createContext()
+const Context = React.createContext();
 
 class Provider extends React.Component {
   state = {
     name: "Snowtooth Mountain",
-    status: "OPEN"
-  }
-  
+    status: "OPEN",
+  };
+
   render() {
     return (
-      <Context.Provider value={{
-        state: this.state,
-        changeStatus: () => this.setState({
-          status: "CLOSED"
-        })
-      }}>
+      <Context.Provider
+        value={{
+          state: this.state,
+          changeStatus: () =>
+            this.setState({
+              status: "CLOSED",
+            }),
+        }}
+      >
         {this.props.children}
       </Context.Provider>
-    )
+    );
   }
 }
 
@@ -30,17 +33,17 @@ export class Resort extends React.Component {
           <Lift />
         </div>
       </Provider>
-    )
+    );
   }
 }
 
-const Lift = props => (
+const Lift = (props) => (
   <div>
     <Trail />
   </div>
-)
+);
 
-const Trail = props => (
+const Trail = (props) => (
   <div>
     <Context.Consumer>
       {(context) => (
@@ -52,4 +55,4 @@ const Trail = props => (
       )}
     </Context.Consumer>
   </div>
-)
+);

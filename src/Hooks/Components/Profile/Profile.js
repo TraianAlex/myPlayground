@@ -1,13 +1,13 @@
 import React from "react";
 
-import ProfilePageFunction from './ProfilePageFunction';
-import ProfilePageClass from './ProfilePageClass';
+import ProfilePageFunction from "./ProfilePageFunction";
+import ProfilePageClass from "./ProfilePageClass";
 
 export class Profile extends React.Component {
   state = {
-    user: 'Dan',
+    user: "Dan",
   };
-  
+
   render() {
     return (
       <>
@@ -15,7 +15,7 @@ export class Profile extends React.Component {
           <b>Choose profile to view: </b>
           <select
             value={this.state.user}
-            onChange={e => this.setState({ user: e.target.value })}
+            onChange={(e) => this.setState({ user: e.target.value })}
           >
             <option value="Dan">Dan</option>
             <option value="Sophie">Sophie</option>
@@ -31,10 +31,8 @@ export class Profile extends React.Component {
           <ProfilePageClass user={this.state.user} />
           <b> (class)</b>
         </p>
-        <p>
-          Can you spot the difference in the behavior?
-        </p>
+        <p>Can you spot the difference in the behavior?</p>
       </>
-    )
+    );
   }
 }

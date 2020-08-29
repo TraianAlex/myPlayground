@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 function longResolve() {
-  return new Promise(res => {
+  return new Promise((res) => {
     setTimeout(res, 3000);
   });
 }

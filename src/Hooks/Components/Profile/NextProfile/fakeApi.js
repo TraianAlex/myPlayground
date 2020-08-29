@@ -4,7 +4,7 @@ export function fetchProfileData(userId) {
   return {
     userId,
     user: wrapPromise(userPromise),
-    posts: wrapPromise(postsPromise)
+    posts: wrapPromise(postsPromise),
   };
 }
 
@@ -16,11 +16,11 @@ function wrapPromise(promise) {
   let status = "pending";
   let result;
   let suspender = promise.then(
-    r => {
+    (r) => {
       status = "success";
       result = r;
     },
-    e => {
+    (e) => {
       status = "error";
       result = e;
     }
@@ -34,34 +34,34 @@ function wrapPromise(promise) {
       } else if (status === "success") {
         return result;
       }
-    }
+    },
   };
 }
 
 export function fetchUser(userId) {
   console.log("fetch user " + userId + "...");
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       console.log("fetched user " + userId);
       switch (userId) {
         case 0:
           resolve({
-            name: "Ringo Starr"
+            name: "Ringo Starr",
           });
           break;
         case 1:
           resolve({
-            name: "George Harrison"
+            name: "George Harrison",
           });
           break;
         case 2:
           resolve({
-            name: "John Lennon"
+            name: "John Lennon",
           });
           break;
         case 3:
           resolve({
-            name: "Paul McCartney"
+            name: "Paul McCartney",
           });
           break;
         default:
@@ -73,7 +73,7 @@ export function fetchUser(userId) {
 
 export function fetchPosts(userId) {
   console.log("fetch posts for " + userId + "...");
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       console.log("fetched posts for " + userId);
       switch (userId) {
@@ -81,64 +81,64 @@ export function fetchPosts(userId) {
           resolve([
             {
               id: 0,
-              text: "I get by with a little help from my friends"
+              text: "I get by with a little help from my friends",
             },
             {
               id: 1,
-              text: "I'd like to be under the sea in an octupus's garden"
+              text: "I'd like to be under the sea in an octupus's garden",
             },
             {
               id: 2,
-              text: "You got that sand all over your feet"
-            }
+              text: "You got that sand all over your feet",
+            },
           ]);
           break;
         case 1:
           resolve([
             {
               id: 0,
-              text: "Turn off your mind, relax, and float downstream"
+              text: "Turn off your mind, relax, and float downstream",
             },
             {
               id: 1,
-              text: "All things must pass"
+              text: "All things must pass",
             },
             {
               id: 2,
-              text: "I look at the world and I notice it's turning"
-            }
+              text: "I look at the world and I notice it's turning",
+            },
           ]);
           break;
         case 2:
           resolve([
             {
               id: 0,
-              text: "Living is easy with eyes closed"
+              text: "Living is easy with eyes closed",
             },
             {
               id: 1,
-              text: "Nothing's gonna change my world"
+              text: "Nothing's gonna change my world",
             },
             {
               id: 2,
-              text: "I am the walrus"
-            }
+              text: "I am the walrus",
+            },
           ]);
           break;
         case 3:
           resolve([
             {
               id: 0,
-              text: "Woke up, fell out of bed"
+              text: "Woke up, fell out of bed",
             },
             {
               id: 1,
-              text: "Here, there, and everywhere"
+              text: "Here, there, and everywhere",
             },
             {
               id: 2,
-              text: "Two of us sending postcards, writing letters"
-            }
+              text: "Two of us sending postcards, writing letters",
+            },
           ]);
           break;
         default:

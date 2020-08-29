@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export default function ColorPicker({ colors = [], activeColor, setActiveColor }) {
-  if (!colors.length) return null
+export default function ColorPicker({
+  colors = [],
+  activeColor,
+  setActiveColor,
+}) {
+  if (!colors.length) return null;
 
   return (
     <fieldset className="color-picker">
@@ -18,5 +22,5 @@ export default function ColorPicker({ colors = [], activeColor, setActiveColor }
         </label>
       ))}
     </fieldset>
-  )
+  );
 }

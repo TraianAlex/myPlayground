@@ -1,67 +1,69 @@
-import React, { useState, useEffect, useRef } from 'react'
-import useWindowSize from './WindowSize'
+import React, { useState, useEffect, useRef } from "react";
+import useWindowSize from "./WindowSize";
 
 export default function Canvas(props) {
-  const [drawing, setDrawing] = useState(false)
-  const [width, setWidth] = useState(window.innerWidth)
-  const [height, setHeight] = useState(window.innerHeight)
-  
-  const canvasRef = useRef()
-  const ctx = useRef()
-  
+  const [drawing, setDrawing] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
+
+  const canvasRef = useRef();
+  const ctx = useRef();
+
   useEffect(() => {
-    ctx.current = canvasRef.current.getContext('2d')
-  }, [])
-  
+    ctx.current = canvasRef.current.getContext("2d");
+  }, []);
+
   // eslint-disable-next-line
   const [windowWidth, windowHeight] = useWindowSize(() => {
-    setWidth(window.innerWidth)
-    setHeight(window.innerHeight)
-  })
-  
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  });
+
   function handleMouseMove(e) {
     // actual coordinates
     const coords = [
       e.clientX - canvasRef.current.offsetLeft,
-      e.clientY - canvasRef.current.offsetTop
-    ]
-    if (drawing) { 
-      ctx.current.lineTo(...coords)
-      ctx.current.stroke()
+      e.clientY - canvasRef.current.offsetTop,
+    ];
+    if (drawing) {
+      ctx.current.lineTo(...coords);
+      ctx.current.stroke();
     }
     if (props.handleMouseMove) {
-        props.handleMouseMove(...coords)
+      props.handleMouseMove(...coords);
     }
   }
 
   function startDrawing(e) {
-    ctx.current.lineJoin = 'round'
-    ctx.current.lineCap = 'round'
-    ctx.current.lineWidth = 10
-    ctx.current.strokeStyle = props.color
+    ctx.current.lineJoin = "round";
+    ctx.current.lineCap = "round";
+    ctx.current.lineWidth = 10;
+    ctx.current.strokeStyle = props.color;
     ctx.current.beginPath();
     // actual coordinates
     ctx.current.moveTo(
       e.clientX - canvasRef.current.offsetLeft,
       e.clientY - canvasRef.current.offsetTop
-    )
-    setDrawing(true)
+    );
+    setDrawing(true);
   }
-  
+
   function stopDrawing() {
-    ctx.current.closePath()
-    setDrawing(false)
+    ctx.current.closePath();
+    setDrawing(false);
   }
-  
-  return <canvas
-    ref={canvasRef}
-    width={props.width || width}
-    height={props.height || height}
-    onMouseDown={startDrawing}
-    onMouseUp={stopDrawing}
-    onMouseOut={stopDrawing}
-    onMouseMove={handleMouseMove}
-  />
+
+  return (
+    <canvas
+      ref={canvasRef}
+      width={props.width || width}
+      height={props.height || height}
+      onMouseDown={startDrawing}
+      onMouseUp={stopDrawing}
+      onMouseOut={stopDrawing}
+      onMouseMove={handleMouseMove}
+    />
+  );
 }
 
 // export default class Canvas extends React.Component {
@@ -94,7 +96,7 @@ export default function Canvas(props) {
 //       e.clientX - this.canvasRef.current.offsetLeft,
 //       e.clientY - this.canvasRef.current.offsetTop
 //     ]
-//     if (this.state.drawing) { 
+//     if (this.state.drawing) {
 //       this.ctx.lineTo(...coords)
 //       this.ctx.stroke()
 //     }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 // first we will make a new context
 const MyContext = React.createContext();
@@ -6,21 +6,24 @@ const MyContext = React.createContext();
 // Then create a provider Component
 class MyProvider extends Component {
   state = {
-    name: 'Wes',
+    name: "Wes",
     age: 100,
-    cool: true
-  }
+    cool: true,
+  };
   render() {
     return (
-      <MyContext.Provider value={{
-        state: this.state,
-        growAYearOlder: () => this.setState({
-          age: this.state.age + 1
-        })
-      }}>
+      <MyContext.Provider
+        value={{
+          state: this.state,
+          growAYearOlder: () =>
+            this.setState({
+              age: this.state.age + 1,
+            }),
+        }}
+      >
         {this.props.children}
       </MyContext.Provider>
-    )
+    );
   }
 }
 
@@ -41,7 +44,7 @@ const Family = (props) => (
   <div className="family">
     <Person />
   </div>
-)
+);
 
 class Person extends Component {
   render() {
@@ -53,13 +56,15 @@ class Person extends Component {
               <p>Age: {context.state.age}</p>
               <p>Name: {context.state.name}</p>
               <button onClick={context.growAYearOlder}>
-                <span role="img" aria-label="">🍰🍥🎂</span>
+                <span role="img" aria-label="">
+                  🍰🍥🎂
+                </span>
               </button>
             </React.Fragment>
           )}
         </MyContext.Consumer>
       </div>
-    )
+    );
   }
 }
 

@@ -5,19 +5,24 @@ export class App1 extends React.Component {
     super(props);
     this.state = {
       // Notice we never see question marks
-      width: "???"
+      width: "???",
     };
     this.myRef = React.createRef();
   }
 
   componentDidMount() {
     this.setState({
-      width: this.myRef.current.offsetWidth
+      width: this.myRef.current.offsetWidth,
     });
   }
 
   render() {
-    return <div ref={this.myRef}>Initial state is set up to '???' but you see only this: {this.state.width}</div>;
+    return (
+      <div ref={this.myRef}>
+        Initial state is set up to '???' but you see only this:{" "}
+        {this.state.width}
+      </div>
+    );
   }
 }
 
