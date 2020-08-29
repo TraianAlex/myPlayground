@@ -1,15 +1,15 @@
-import React from 'react';
-import { TopNumber } from './TopNumber';
-import { Display } from './Display';
-import { Target } from './Target';
-import { random, clone } from './helpers';
+import React from "react";
+import { TopNumber } from "./TopNumber";
+import { Display } from "./Display";
+import { Target } from "./Target";
+import { random, clone } from "./helpers";
 
 const fieldStyle = {
-  position: 'absolute',
+  position: "absolute",
   width: 250,
   bottom: 60,
   left: 10,
-  height: '60%',
+  height: "60%",
 };
 
 export class App extends React.Component {
@@ -19,7 +19,7 @@ export class App extends React.Component {
     this.state = {
       game: false,
       targets: {},
-      latestClick: 0
+      latestClick: 0,
     };
 
     this.intervals = null;
@@ -31,16 +31,21 @@ export class App extends React.Component {
 
   createTarget(key, ms) {
     ms = ms || random(500, 2000);
-    this.intervals.push(setInterval(function () {
-      let targets = clone(this.state.targets);
-      let num = random(1, 1000 * 1000);
-      targets[key] = targets[key] !== 0 ? 0 : num;
-      this.setState({ targets: targets });
-    }.bind(this), ms));
+    this.intervals.push(
+      setInterval(
+        function() {
+          let targets = clone(this.state.targets);
+          let num = random(1, 1000 * 1000);
+          targets[key] = targets[key] !== 0 ? 0 : num;
+          this.setState({ targets: targets });
+        }.bind(this),
+        ms
+      )
+    );
   }
 
   hitTarget(e) {
-    if (e.target.className !== 'target') return;
+    if (e.target.className !== "target") return;
     let num = parseInt(e.target.innerText);
     // eslint-disable-next-line
     for (let target in this.state.targets) {
@@ -51,9 +56,9 @@ export class App extends React.Component {
   }
 
   startGame() {
-    this.createTarget('first', 750);
+    this.createTarget("first", 750);
     this.setState({
-      game: true
+      game: true,
     });
   }
 
@@ -65,7 +70,7 @@ export class App extends React.Component {
     this.setState({
       game: false,
       targets: {},
-      latestClick: 0
+      latestClick: 0,
     });
   }
 
@@ -81,15 +86,11 @@ export class App extends React.Component {
 
   render() {
     let buttonStyle = {
-      display: this.state.game ? 'none' : 'inline-block'
+      display: this.state.game ? "none" : "inline-block",
     };
     let targets = [];
     for (let key in this.state.targets) {
-      targets.push(
-        <Target
-          number={this.state.targets[key]}
-          key={key} />
-      );
+      targets.push(<Target number={this.state.targets[key]} key={key} />);
     }
     return (
       <div>

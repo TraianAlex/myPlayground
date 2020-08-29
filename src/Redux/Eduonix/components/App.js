@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { Navbar, Nav, NavDropdown, Table } from 'react-bootstrap';
-import Select from 'react-select';
-import { fetchInfo } from '../actions/actions_info';
+import { Navbar, Nav, NavDropdown, Table } from "react-bootstrap";
+import Select from "react-select";
+import { fetchInfo } from "../actions/actions_info";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedOption: ''
+      selectedOption: "",
     };
   }
 
@@ -17,13 +17,13 @@ export default class App extends Component {
 
   handleChange(selectedOption) {
     this.setState({
-      selectedOption: selectedOption ? selectedOption : ''
+      selectedOption: selectedOption ? selectedOption : "",
     });
   }
 
   render() {
-    const selectList = this.props.info.map(item => {
-      return { value: item.name, label: item.name }
+    const selectList = this.props.info.map((item) => {
+      return { value: item.name, label: item.name };
     });
     return (
       <div>
@@ -36,10 +36,16 @@ export default class App extends Component {
               <Nav.Link href="#link">Link</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Something
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>
@@ -79,18 +85,21 @@ export default class App extends Component {
                     </thead>
                     <tbody>
                       {// eslint-disable-next-line array-callback-return
-                        this.props.info.map(item => {
-                          if (this.state.selectedOption === '' || item.name === this.state.selectedOption.value) {
-                            return (
-                              <tr key={`item-${item.name}`}>
-                                <td>{item.name}</td>
-                                <td>{item.address}</td>
-                                <td>{item.age}</td>
-                                <td>{item.company}</td>
-                              </tr>
-                            )
-                          }
-                        })}
+                      this.props.info.map((item) => {
+                        if (
+                          this.state.selectedOption === "" ||
+                          item.name === this.state.selectedOption.value
+                        ) {
+                          return (
+                            <tr key={`item-${item.name}`}>
+                              <td>{item.name}</td>
+                              <td>{item.address}</td>
+                              <td>{item.age}</td>
+                              <td>{item.company}</td>
+                            </tr>
+                          );
+                        }
+                      })}
                     </tbody>
                   </Table>
                 </div>

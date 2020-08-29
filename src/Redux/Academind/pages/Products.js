@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
-import MainNavigation from '../components/MainNavigation';
-import { addProductToCart } from '../store/actions';
-import './Products.css';
+import MainNavigation from "../components/MainNavigation";
+import { addProductToCart } from "../store/actions";
+import "./Products.css";
 
 class ProductsPage extends Component {
   render() {
@@ -12,7 +12,7 @@ class ProductsPage extends Component {
         <MainNavigation cartItemNumber={this.props.cartItemCount} />
         <main className="products">
           <ul>
-            {this.props.products.map(product => (
+            {this.props.products.map((product) => (
               <li key={product.id}>
                 <div>
                   <strong>{product.title}</strong> - ${product.price}
@@ -33,22 +33,19 @@ class ProductsPage extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     products: state.products,
     cartItemCount: state.cart.reduce((count, curItem) => {
       return count + curItem.quantity;
-    }, 0)
+    }, 0),
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    addProductToCart: product => dispatch(addProductToCart(product))
+    addProductToCart: (product) => dispatch(addProductToCart(product)),
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ProductsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsPage);

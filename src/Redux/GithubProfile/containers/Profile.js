@@ -1,13 +1,13 @@
-import { connect } from 'react-redux';
-import { fetchProfile, saveProfile } from '../actions/actions_profile';
+import { connect } from "react-redux";
+import { fetchProfile, saveProfile } from "../actions/actions_profile";
 
-import ProfileComponent from '../components/Profile';
+import ProfileComponent from "../components/Profile";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     profile: state.profile,
   };
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
@@ -16,9 +16,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     saveProfile: (profile) => {
       dispatch(saveProfile(profile));
-    }
-  }
-}
+    },
+  };
+};
 
 const Profile = connect(mapStateToProps, mapDispatchToProps)(ProfileComponent);
 

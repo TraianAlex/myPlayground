@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import App from './App';
-import reducer from './reducer';
+import React, { Component } from "react";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import App from "./App";
+import reducer from "./reducer";
 
 const store = createStore(reducer);
 
@@ -15,7 +15,6 @@ export default class Main extends Component {
           <App />
         </div>
       </Provider>
-    )
+    );
   }
 }
-

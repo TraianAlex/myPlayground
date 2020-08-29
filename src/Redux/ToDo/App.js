@@ -1,40 +1,19 @@
-import React, { Component } from 'react'; // , PropTypes 
-import TodoList from './TodoList';
-import { connect } from './Provider';
-import { CREATE_TODO, UPDATE_TODO } from './store';
-
-// const Todo = PropTypes.shape({
-//   title: PropTypes.string
-// });
+import React, { Component } from "react"; // , PropTypes
+import TodoList from "./TodoList";
+import { connect } from "./Provider";
+import { CREATE_TODO, UPDATE_TODO } from "./store";
 
 class App extends Component {
-  // state = {
-  //   newTodo: '',
-  //   todos: [{ title: 'Finish the project' }]
-  // }
-  // static propTypes = {
-  //   newTodo: PropTypes.string,
-  //   todos: PropTypes.arrayOf(Todo).isRequired,
-  //   dispatch: PropTypes.func.isRequired
-  // }
+  onChange = (e) => {
+    this.props.dispatch({ type: UPDATE_TODO, todo: e.target.value });
+  };
 
-  onChange = e => {
-    // this.setState({ newTodo: e.target.value })
-    this.props.dispatch({ type: UPDATE_TODO, todo: e.target.value })
-  }
-
-  addTodo = e => {
+  addTodo = (e) => {
     e.preventDefault();
-    this.props.dispatch({ type: CREATE_TODO, todo: this.props.newTodo});
-    // this.setState({ 
-    //   newTodo: '',
-    //   todos: [ ...this.state.todos, { title: this.state.newTodo }]
-    //   // todos: this.state.todos.concat({ title: this.state.newTodo })
-    // })
-  }
+    this.props.dispatch({ type: CREATE_TODO, todo: this.props.newTodo });
+  };
 
   render() {
-    // const { todos, newTodo } = this.state;
     const { todos, newTodo } = this.props;
 
     return (
@@ -48,8 +27,8 @@ class App extends Component {
         </form>
         <TodoList todos={todos} />
       </div>
-    )
+    );
   }
 }
 
-export default connect(state => state)(App);
+export default connect((state) => state)(App);

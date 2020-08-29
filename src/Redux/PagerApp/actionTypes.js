@@ -1,2 +1,2 @@
-export const NEXT = 'NEXT';
-export const PREV = 'PREV';
+export const NEXT = "NEXT";
+export const PREV = "PREV";

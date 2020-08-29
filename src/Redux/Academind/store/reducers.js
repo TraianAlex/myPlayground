@@ -1,13 +1,13 @@
-import { ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_FROM_CART } from './actions';
+import { ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_FROM_CART } from "./actions";
 
 const initialState = {
   products: [
-    { id: 'p1', title: 'Gaming Mouse', price: 29.99 },
-    { id: 'p2', title: 'Harry Potter 3', price: 9.99 },
-    { id: 'p3', title: 'Used plastic bottle', price: 0.99 },
-    { id: 'p4', title: 'Half-dried plant', price: 2.99 }
+    { id: "p1", title: "Gaming Mouse", price: 29.99 },
+    { id: "p2", title: "Harry Potter 3", price: 9.99 },
+    { id: "p3", title: "Used plastic bottle", price: 0.99 },
+    { id: "p4", title: "Half-dried plant", price: 2.99 },
   ],
-  cart: []
+  cart: [],
 };
 
 const shopReducer = (state = initialState, action) => {
@@ -17,14 +17,14 @@ const shopReducer = (state = initialState, action) => {
     case ADD_PRODUCT_TO_CART:
       updatedCart = [...state.cart];
       updatedItemIndex = updatedCart.findIndex(
-        item => item.id === action.payload.id
+        (item) => item.id === action.payload.id
       );
 
       if (updatedItemIndex < 0) {
         updatedCart.push({ ...action.payload, quantity: 1 });
       } else {
         const updatedItem = {
-          ...updatedCart[updatedItemIndex]
+          ...updatedCart[updatedItemIndex],
         };
         updatedItem.quantity++;
         updatedCart[updatedItemIndex] = updatedItem;
@@ -33,11 +33,11 @@ const shopReducer = (state = initialState, action) => {
     case REMOVE_PRODUCT_FROM_CART:
       updatedCart = [...state.cart];
       updatedItemIndex = updatedCart.findIndex(
-        item => item.id === action.payload
+        (item) => item.id === action.payload
       );
 
       const updatedItem = {
-        ...updatedCart[updatedItemIndex]
+        ...updatedCart[updatedItemIndex],
       };
       updatedItem.quantity--;
       if (updatedItem.quantity <= 0) {

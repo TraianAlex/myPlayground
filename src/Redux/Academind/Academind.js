@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import React, { Component } from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-import ProductsPage from './pages/Products';
-import CartPage from './pages/Cart';
-import './App.css';
+import ProductsPage from "./pages/Products";
+import CartPage from "./pages/Cart";
+import "./App.css";
 
 export class Academind extends Component {
   render() {

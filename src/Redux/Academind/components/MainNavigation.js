@@ -1,9 +1,9 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-import './MainNavigation.css';
+import "./MainNavigation.css";
 
-const mainNavigation = props => (
+const mainNavigation = (props) => (
   <header className="main-navigation">
     <nav>
       <ul>

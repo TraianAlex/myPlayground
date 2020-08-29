@@ -1,28 +1,27 @@
-export const UPDATE_TODO = 'UPDATE_TODO';
-export const CREATE_TODO = 'CREATE_TODO';
+export const UPDATE_TODO = "UPDATE_TODO";
+export const CREATE_TODO = "CREATE_TODO";
 
 const initialState = {
-  newTodo: '',
-  todos: [{ title: 'Finish this project'}]
-}
+  newTodo: "",
+  todos: [{ title: "Finish this project" }],
+};
 
 function reduce(state, action) {
-  switch(action.type) {
+  switch (action.type) {
     case UPDATE_TODO:
       return {
         ...state,
-        newTodo: action.todo
-      }
+        newTodo: action.todo,
+      };
     case CREATE_TODO:
       return {
-        newTodo: '',
-        todos: state.todos.concat({title: action.todo})
-      }
+        newTodo: "",
+        todos: state.todos.concat({ title: action.todo }),
+      };
     default:
       return state;
   }
 }
-
 
 let state = initialState;
 let store = null;
@@ -34,16 +33,16 @@ export default function createStore() {
   let listeners = [];
 
   store = {
-    subscribe: listener => {
-      listeners.push(listener)
+    subscribe: (listener) => {
+      listeners.push(listener);
     },
-    dispatch: action => {
+    dispatch: (action) => {
       state = reduce(state, action);
-      listeners.forEach(l => l());
+      listeners.forEach((l) => l());
       return action;
     },
-    getState: () => state
-  }
+    getState: () => state,
+  };
 
   return store;
 }

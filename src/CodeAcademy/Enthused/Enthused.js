@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 export class Enthused extends React.Component {
   componentDidMount() {
     this.interval = setInterval(() => {
-      this.props.addText('!');
+      this.props.addText("!");
     }, 15);
   }
 
@@ -12,10 +12,6 @@ export class Enthused extends React.Component {
   }
 
   render() {
-    return (
-      <button onClick={this.props.toggle}>
-        Stop!
-      </button>
-    );
+    return <button onClick={this.props.toggle}>Stop!</button>;
   }
 }

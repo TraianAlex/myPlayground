@@ -1,28 +1,17 @@
-import React, { Component } from 'react'; // , PropTypes 
-import TodoList from './TodoList';
-import { connect } from 'react-redux';
-import * as actions from './actions';
-
-// const Todo = PropTypes.shape({
-//   title: PropTypes.string
-// });
+import React, { Component } from "react"; // , PropTypes
+import TodoList from "./TodoList";
+import { connect } from "react-redux";
+import * as actions from "./actions";
 
 export class App extends Component {
-  // static propTypes = {
-  //   newTodo: PropTypes.string,
-  //   todos: PropTypes.arrayOf(Todo).isRequired,
-  //   updateTodo: PropTypes.func.isRequired,
-  //   createTodo: PropTypes.func.isRequired
-  // }
+  onChange = (e) => {
+    this.props.updateTodo(e.target.value);
+  };
 
-  onChange = e => {
-    this.props.updateTodo(e.target.value)
-  }
-
-  addTodo = e => {
+  addTodo = (e) => {
     e.preventDefault();
     this.props.createTodo(this.props.newTodo);
-  }
+  };
 
   render() {
     const { todos, newTodo } = this.props;
@@ -37,12 +26,8 @@ export class App extends Component {
         </form>
         <TodoList todos={todos} />
       </div>
-    )
+    );
   }
 }
 
-export default connect(
-  // state => state,
-  state => state.toJS(),
-  actions
-)(App);
+export default connect((state) => state.toJS(), actions)(App);

@@ -1,44 +1,40 @@
-import React from 'react';
-const yellow = 'rgb(255, 215, 18)';
+import React from "react";
+const yellow = "rgb(255, 215, 18)";
 
 export class TopNumber extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { 'highest': 0 };
+    this.state = { highest: 0 };
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.number > this.state.highest) {
-      this.setState({ 'highest': nextProps.number });
+      this.setState({ highest: nextProps.number });
     }
   }
 
   UNSAFE_componentWillUpdate(nextProps, nextState) {
-    if (document.body.style.background !== yellow
-      && this.state.highest >= 950 * 1000) {
+    if (
+      document.body.style.background !== yellow &&
+      this.state.highest >= 950 * 1000
+    ) {
       document.body.style.background = yellow;
-    } else if (!this.props.game
-      && nextProps.game) {
-      document.body.style.background = 'white';
+    } else if (!this.props.game && nextProps.game) {
+      document.body.style.background = "white";
     }
   }
 
   render() {
-    return (
-      <h1>
-        Top Number: {this.state.highest}
-      </h1>
-    );
+    return <h1>Top Number: {this.state.highest}</h1>;
   }
 }
 
 // TopNumber.propTypes = {
-  // number: React.PropTypes.number,
-  // game: React.PropTypes.bool
+// number: React.PropTypes.number,
+// game: React.PropTypes.bool
 // };
 
 // TopNumber.defaultProps = {
 //   number: 0
 // }
-

@@ -1,6 +1,5 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import App from '../Max/ListCond/App';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import App from "../Max/ListCond/App";
 
-storiesOf('ListConditionalsMax', module)
-  .add('conditionals', () => <App />);
+storiesOf("ListConditionalsMax", module).add("conditionals", () => <App />);

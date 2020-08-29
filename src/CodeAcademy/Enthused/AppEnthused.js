@@ -1,5 +1,5 @@
-import React from 'react';
-import { Enthused } from './Enthused';
+import React from "react";
+import { Enthused } from "./Enthused";
 
 export class AppEnthused extends React.Component {
   constructor(props) {
@@ -7,7 +7,7 @@ export class AppEnthused extends React.Component {
 
     this.state = {
       enthused: false,
-      text: ''
+      text: "",
     };
 
     this.toggleEnthusiasm = this.toggleEnthusiasm.bind(this);
@@ -17,7 +17,7 @@ export class AppEnthused extends React.Component {
 
   toggleEnthusiasm() {
     this.setState({
-      enthused: !this.state.enthused
+      enthused: !this.state.enthused,
     });
   }
 
@@ -41,19 +41,18 @@ export class AppEnthused extends React.Component {
         <Enthused toggle={this.toggleEnthusiasm} addText={this.addText} />
       );
     } else {
-      button = (
-        <button onClick={this.toggleEnthusiasm}>
-          Add Enthusiasm!
-        </button>
-      );
+      button = <button onClick={this.toggleEnthusiasm}>Add Enthusiasm!</button>;
     }
 
     return (
       <div>
         <h1>Auto-Enthusiasm</h1>
-        <textarea rows="7" cols="40" value={this.state.text} 
-          onChange={this.handleChange}>
-        </textarea>
+        <textarea
+          rows="7"
+          cols="40"
+          value={this.state.text}
+          onChange={this.handleChange}
+        ></textarea>
         {button}
         <h2>{this.state.text}</h2>
       </div>
