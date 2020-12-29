@@ -1,6 +1,6 @@
 import React from "react";
 
-const Context = React.createContext();
+const Context = React.createContext({state: {}, changeStatus: () => {}});
 
 class Provider extends React.Component {
   state = {

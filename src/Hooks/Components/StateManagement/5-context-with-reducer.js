@@ -1,8 +1,8 @@
-import React from "react";
+import React, { createContext, useContext, useReducer } from "react";
 
 // src/count/count-context.js
 
-const CountContext = React.createContext();
+const CountContext = createContext(null);
 
 function countReducer(state, action) {
   switch (action.type) {
@@ -16,14 +16,14 @@ function countReducer(state, action) {
 }
 
 function CountProvider(props) {
-  const [state, dispatch] = React.useReducer(countReducer, { count: 0 });
+  const [state, dispatch] = useReducer(countReducer, { count: 0 });
   const value = React.useMemo(() => [state, dispatch], [state]);
 
   return <CountContext.Provider value={value} {...props} />;
 }
 
 function useCount() {
-  const context = React.useContext(CountContext);
+  const context = useContext(CountContext);
   if (!context) {
     throw new Error(`useCount must be used within a CountProvider`);
   }

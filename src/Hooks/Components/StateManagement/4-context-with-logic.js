@@ -1,10 +1,10 @@
-import React from "react";
+import React, { createContext, useContext } from "react";
 
 // src/count/count-context.js
-const CountContext = React.createContext();
+const CountContext = createContext(null);
 
 function useCount() {
-  const context = React.useContext(CountContext);
+  const context = useContext(CountContext);
   if (!context) {
     throw new Error(`useCount must be used within a CountProvider`);
   }

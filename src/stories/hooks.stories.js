@@ -29,6 +29,8 @@ import MaxIntro from "../Hooks/MaxIntro/App";
 //import App from './Components/StateManagement/4-context-with-logic';
 import App from "../Hooks/Components/StateManagement/5-context-with-reducer";
 
+import { AppContact } from '../Hooks/KeyProp/Contact';
+
 const store6 = createStore(shopReducer, applyMiddleware(thunk));
 
 storiesOf("Hooks", module)
@@ -52,6 +54,7 @@ storiesOf("Hooks", module)
     </Provider>
   ))
   .add("maxIntro", () => <MaxIntro />)
-  .add("statemanagement", () => <App />);
+  .add("statemanagement", () => <App />)
+  .add("AppContact", () => <AppContact />);
 
 // eslint-disable-next-line

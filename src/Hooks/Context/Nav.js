@@ -3,6 +3,8 @@ import { MovieContext } from "./MovieContext";
 
 export default function Nav() {
   // eslint-disable-next-line
+  // @ts-ignore
+  // eslint-disable-next-line no-unused-vars
   const [movies, setMovies] = useContext(MovieContext);
 
   return (

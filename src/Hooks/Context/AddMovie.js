@@ -5,6 +5,8 @@ export default function AddMovie() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   // eslint-disable-next-line
+  // @ts-ignore
+  // eslint-disable-next-line no-unused-vars
   const [movies, setMovies] = useContext(MovieContext);
 
   const updateName = (e) => {

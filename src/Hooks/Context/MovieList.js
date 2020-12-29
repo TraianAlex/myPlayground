@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useContext } from "react";
 import Movie from "./Movie";
 import { MovieContext } from "./MovieContext";
