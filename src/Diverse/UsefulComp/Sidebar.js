@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Sidebar from "react-sidebar";
 import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
-import "./Sidebar.css";
 
 export const SidebarComp = () => {
   const [sidebarOpen, setSiderbarOpen] = useState(true);
@@ -19,7 +18,7 @@ export const SidebarComp = () => {
       styles={{ sidebar: { background: "white" } }}
     >
       <button onClick={() => onSetSidebarOpen(true)} className="navbar-toggler">
-        <span class="navbar-toggler-icon"></span>Open
+        <i className="fa fa-toggle-right"></i>
       </button>
     </Sidebar>
   );
@@ -70,3 +69,53 @@ export class RespSidebar extends React.Component {
 }
 
 // https://github.com/balloob/react-sidebar
+/*
+{
+  root: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    overflow: "hidden"
+  },
+  sidebar: {
+    zIndex: 2,
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    transition: "transform .3s ease-out",
+    WebkitTransition: "-webkit-transform .3s ease-out",
+    willChange: "transform",
+    overflowY: "auto"
+  },
+  content: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    overflowY: "auto",
+    WebkitOverflowScrolling: "touch",
+    transition: "left .3s ease-out, right .3s ease-out"
+  },
+  overlay: {
+    zIndex: 1,
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    opacity: 0,
+    visibility: "hidden",
+    transition: "opacity .3s ease-out, visibility .3s ease-out",
+    backgroundColor: "rgba(0,0,0,.3)"
+  },
+  dragHandle: {
+    zIndex: 1,
+    position: "fixed",
+    top: 0,
+    bottom: 0
+  }
+};
+*/
