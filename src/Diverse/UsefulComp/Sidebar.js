@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "react-sidebar";
+import "bootstrap/dist/css/bootstrap.css";
+import "font-awesome/css/font-awesome.css";
 import "./Sidebar.css";
 
 export const SidebarComp = () => {
@@ -16,7 +18,9 @@ export const SidebarComp = () => {
       onSetOpen={onSetSidebarOpen}
       styles={{ sidebar: { background: "white" } }}
     >
-      <button onClick={() => onSetSidebarOpen(true)}>Open sidebar</button>
+      <button onClick={() => onSetSidebarOpen(true)} className="navbar-toggler">
+        <span class="navbar-toggler-icon"></span>Open
+      </button>
     </Sidebar>
   );
 };

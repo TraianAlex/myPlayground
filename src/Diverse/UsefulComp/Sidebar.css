@@ -28,6 +28,7 @@ content {
   --webkit-overflow-scrolling: "touch";
   transition: "left .3s ease-out, right .3s ease-out";
 }
+
 overlay {
   z-index: 1;
   position: "fixed";
