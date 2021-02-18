@@ -1,35 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "react-sidebar";
-// import './Sidebar.css';
+import "./Sidebar.css";
 
-export class SidebarComp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sidebarOpen: true,
-    };
-    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
-  }
+export const SidebarComp = () => {
+  const [sidebarOpen, setSiderbarOpen] = useState(true);
 
-  onSetSidebarOpen(open) {
-    this.setState({ sidebarOpen: open });
-  }
+  const onSetSidebarOpen = (open) => {
+    setSiderbarOpen(open);
+  };
 
-  render() {
-    return (
-      <Sidebar
-        sidebar={<b>Sidebar content</b>}
-        open={this.state.sidebarOpen}
-        onSetOpen={this.onSetSidebarOpen}
-        styles={{ sidebar: { background: "white" } }}
-      >
-        <button onClick={() => this.onSetSidebarOpen(true)}>
-          Open sidebar
-        </button>
-      </Sidebar>
-    );
-  }
-}
+  return (
+    <Sidebar
+      sidebar={<b>Sidebar content</b>}
+      open={sidebarOpen}
+      onSetOpen={onSetSidebarOpen}
+      styles={{ sidebar: { background: "white" } }}
+    >
+      <button onClick={() => onSetSidebarOpen(true)}>Open sidebar</button>
+    </Sidebar>
+  );
+};
 
 const mql = window.matchMedia(`(min-width: 800px)`);
 
