@@ -1,0 +1,24 @@
+// This module exports fake data fetching functionality.
+// In a real app, this would grab data from the internet, but
+// this module just waits a little bit before responding.
+
+export function get(endpoint, DATA) {
+  const delay = Math.floor(Math.random() * 1000) + 500; 
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (!DATA.hasOwnProperty(endpoint)) {
+        const validEndpoints = Object.keys(DATA)
+          .map(endpoint => ` - "${endpoint}"`)
+          .join('\n ');
+        reject(
+          `"${endpoint}" is an invalid endpoint. Try getting data from: \n ${validEndpoints}`,
+        );
+      }
+
+      const response = { status: 200, data: DATA[endpoint] };
+
+      resolve(response);
+    }, delay);
+  });
+}
