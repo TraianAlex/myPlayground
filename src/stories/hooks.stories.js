@@ -13,7 +13,7 @@ import { RandomMeUsers } from "../Hooks/Components/ComposeComponent";
 import Paint from "../Hooks/Components/Paint/Paint";
 import Playground from "../Hooks/Components/Paint/Playground";
 import PicIndex from "../Hooks/PicSomeApp/PicIndex";
-import StateManager from "../Hooks/Context/App";
+import Movies from "../Hooks/Context/App";
 
 import { Provider } from "react-redux";
 import MiniStoreContext from "../Hooks/MiniStoreContext/App";
@@ -47,7 +47,7 @@ storiesOf("Hooks", module)
   .add("paint", () => <Paint />)
   .add("playground", () => <Playground />)
   .add("picStore", () => <PicIndex />)
-  .add("stateManagement", () => <StateManager />)
+  .add("moviesManagement", () => <Movies />)
   .add("miniStoreContext", () => (
     <Provider store={store6}>
       <MiniStoreContext />

@@ -1,25 +1,28 @@
-import React, { useState, useContext } from "react";
-import { MovieContext } from "./MovieContext";
+// @ts-nocheck
+import React, { useState, useContext } from 'react';
+import { MovieContext } from './MovieContext';
+
+const getRandomId = () => `${Math.random()}-${Math.random()}`;
 
 export default function AddMovie() {
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  // eslint-disable-next-line
-  // @ts-ignore
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState('');
   // eslint-disable-next-line no-unused-vars
   const [movies, setMovies] = useContext(MovieContext);
 
-  const updateName = (e) => {
-    setName(e.target.value);
+  const updateName = ({ target }) => {
+    setName(target.value);
   };
 
-  const updatePrice = (e) => {
-    setPrice(e.target.value);
+  const updatePrice = ({ target }) => {
+    setPrice(target.value);
   };
 
-  const addMovie = (e) => {
+  const addMovie = e => {
     e.preventDefault();
-    setMovies((prevMovies) => [...prevMovies, { name: name, price: price }]);
+    setMovies(prevMovies => [...prevMovies, { name: name, price: price, id: getRandomId }]);
+    setName('');
+    setPrice('');
   };
 
   return (
