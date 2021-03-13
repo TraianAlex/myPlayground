@@ -14,13 +14,7 @@ import Paint from "../Hooks/Components/Paint/Paint";
 import Playground from "../Hooks/Components/Paint/Playground";
 import PicIndex from "../Hooks/PicSomeApp/PicIndex";
 import Movies from "../Hooks/Context/App";
-
-import { Provider } from "react-redux";
 import MiniStoreContext from "../Hooks/MiniStoreContext/App";
-import shopReducer from "../Hooks/MiniStoreContext/store/reducers";
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-
 import MaxIntro from "../Hooks/MaxIntro/App";
 
 //import App from './Components/StateManagement/1-simple-count';
@@ -30,8 +24,6 @@ import MaxIntro from "../Hooks/MaxIntro/App";
 import App from "../Hooks/Components/StateManagement/5-context-with-reducer";
 
 import { AppContact } from '../Hooks/KeyProp/Contact';
-
-const store6 = createStore(shopReducer, applyMiddleware(thunk));
 
 storiesOf("Hooks", module)
   .add("intermediate state", () => <App1 />)
@@ -48,11 +40,7 @@ storiesOf("Hooks", module)
   .add("playground", () => <Playground />)
   .add("picStore", () => <PicIndex />)
   .add("moviesManagement", () => <Movies />)
-  .add("miniStoreContext", () => (
-    <Provider store={store6}>
-      <MiniStoreContext />
-    </Provider>
-  ))
+  .add("miniStoreContext", () => <MiniStoreContext />)
   .add("maxIntro", () => <MaxIntro />)
   .add("statemanagement", () => <App />)
   .add("AppContact", () => <AppContact />);
