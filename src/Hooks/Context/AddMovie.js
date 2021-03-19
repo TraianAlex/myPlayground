@@ -1,34 +1,33 @@
 // @ts-nocheck
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { MovieContext } from './MovieContext';
+import { useInput } from './useInput';
 
 const getRandomId = () => `${Math.random()}-${Math.random()}`;
 
 export default function AddMovie() {
-  const [name, setName] = useState('');
-  const [price, setPrice] = useState('');
+  const { value: name, bind: bindName, reset: resetName } = useInput('');
+  const { value: price, bind: bindPrice, reset: resetPrice } = useInput('');
   // eslint-disable-next-line no-unused-vars
   const [movies, setMovies] = useContext(MovieContext);
 
-  const updateName = ({ target }) => {
-    setName(target.value);
-  };
-
-  const updatePrice = ({ target }) => {
-    setPrice(target.value);
-  };
-
   const addMovie = e => {
     e.preventDefault();
-    setMovies(prevMovies => [...prevMovies, { name: name, price: price, id: getRandomId }]);
-    setName('');
-    setPrice('');
+    if (name === '' || price === '') {
+      return;
+    }
+    setMovies(prevMovies => [
+      ...prevMovies,
+      { name: name, price: price, id: getRandomId },
+    ]);
+    resetName('');
+    resetPrice('');
   };
 
   return (
     <form onSubmit={addMovie}>
-      <input type="text" name="name" value={name} onChange={updateName} />
-      <input type="text" name="price" value={price} onChange={updatePrice} />
+      <input type="text" {...bindName} />
+      <input type="text" {...bindPrice} />
       <button>Submit</button>
     </form>
   );
