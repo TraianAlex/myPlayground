@@ -1,9 +1,9 @@
-export let random = (min, max) => {
+export const random = (min, max) => {
   let r = Math.random();
   return Math.floor(r * (max - min) + min);
 };
 
-export let clone = (obj) => {
+export const clone = obj => {
   let newObj = {};
   for (let prop in obj) {
     if (obj.hasOwnProperty(prop)) {

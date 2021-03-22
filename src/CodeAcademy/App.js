@@ -1,18 +1,20 @@
-import React from "react";
-import { TopNumber } from "./TopNumber";
-import { Display } from "./Display";
-import { Target } from "./Target";
-import { random, clone } from "./helpers";
+// @ts-nocheck
+import React, { Component } from 'react';
+import { TopNumber } from './TopNumber';
+import { Display } from './Display';
+import { Target } from './Target';
+import { random, clone } from './helpers';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const fieldStyle = {
-  position: "absolute",
+  position: 'absolute',
   width: 250,
   bottom: 60,
   left: 10,
-  height: "60%",
+  height: '60%',
 };
 
-export class App extends React.Component {
+export class App extends Component {
   constructor(props) {
     super(props);
 
@@ -23,29 +25,23 @@ export class App extends React.Component {
     };
 
     this.intervals = null;
-
-    this.hitTarget = this.hitTarget.bind(this);
-    this.startGame = this.startGame.bind(this);
     this.endGame = this.endGame.bind(this);
   }
 
   createTarget(key, ms) {
     ms = ms || random(500, 2000);
     this.intervals.push(
-      setInterval(
-        function() {
-          let targets = clone(this.state.targets);
-          let num = random(1, 1000 * 1000);
-          targets[key] = targets[key] !== 0 ? 0 : num;
-          this.setState({ targets: targets });
-        }.bind(this),
-        ms
-      )
+      setInterval(() => {
+        let targets = clone(this.state.targets);
+        let num = random(1, 1000 * 1000);
+        targets[key] = targets[key] !== 0 ? 0 : num;
+        this.setState({ targets: targets });
+      }, ms),
     );
   }
 
   hitTarget(e) {
-    if (e.target.className !== "target") return;
+    if (e.target.className !== 'target') return;
     let num = parseInt(e.target.innerText);
     // eslint-disable-next-line
     for (let target in this.state.targets) {
@@ -56,14 +52,14 @@ export class App extends React.Component {
   }
 
   startGame() {
-    this.createTarget("first", 750);
+    this.createTarget('first', 750);
     this.setState({
       game: true,
     });
   }
 
   endGame() {
-    this.intervals.forEach((int) => {
+    this.intervals.forEach(int => {
       clearInterval(int);
     });
     this.intervals = [];
@@ -86,20 +82,20 @@ export class App extends React.Component {
 
   render() {
     let buttonStyle = {
-      display: this.state.game ? "none" : "inline-block",
+      display: this.state.game ? 'none' : 'inline-block',
     };
     let targets = [];
     for (let key in this.state.targets) {
       targets.push(<Target number={this.state.targets[key]} key={key} />);
     }
     return (
-      <div>
+      <div className="container mb-5">
         <TopNumber number={this.state.latestClick} game={this.state.game} />
         <Display number={this.state.latestClick} />
-        <button onClick={this.startGame} style={buttonStyle}>
+        <button onClick={() => this.startGame()} style={buttonStyle}>
           New Game
         </button>
-        <div style={fieldStyle} onClick={this.hitTarget}>
+        <div style={fieldStyle} onClick={(e) => this.hitTarget(e)}>
           {targets}
         </div>
       </div>

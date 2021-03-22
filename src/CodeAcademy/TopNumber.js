@@ -1,12 +1,9 @@
-import React from "react";
-const yellow = "rgb(255, 215, 18)";
+import React from 'react';
+
+const yellow = 'rgb(255, 215, 18)';
 
 export class TopNumber extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { highest: 0 };
-  }
+  state = { highest: 0 };
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.number > this.state.highest) {
@@ -21,7 +18,7 @@ export class TopNumber extends React.Component {
     ) {
       document.body.style.background = yellow;
     } else if (!this.props.game && nextProps.game) {
-      document.body.style.background = "white";
+      document.body.style.background = 'white';
     }
   }
 
@@ -35,6 +32,6 @@ export class TopNumber extends React.Component {
 // game: React.PropTypes.bool
 // };
 
-// TopNumber.defaultProps = {
-//   number: 0
-// }
+TopNumber.defaultProps = {
+  number: 0
+}
