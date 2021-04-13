@@ -1,24 +1,50 @@
-import React, { useState } from "react";
-import Sidebar from "react-sidebar";
-import "bootstrap/dist/css/bootstrap.css";
-import "font-awesome/css/font-awesome.css";
+import React, { useState } from 'react';
+import Sidebar from 'react-sidebar';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
+import './Sidebar.css';
+
+const ContentSidebar = () => (
+  <nav className="sidebar-wrapper">
+    <ul className="sidebar-nav">
+      <li className="sidebar-brand">
+        <a href="#top">Start Bootstrap</a>
+      </li>
+      <li>
+        <a href="#top">Home</a>
+      </li>
+      <li>
+        <a href="#about">About</a>
+      </li>
+      <li>
+        <a href="#services">Services</a>
+      </li>
+      <li>
+        <a href="#portfolio">Portfolio</a>
+      </li>
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+);
 
 export const SidebarComp = () => {
   const [sidebarOpen, setSiderbarOpen] = useState(true);
 
-  const onSetSidebarOpen = (open) => {
+  const onSetSidebarOpen = open => {
     setSiderbarOpen(open);
   };
 
   return (
     <Sidebar
-      sidebar={<b>Sidebar content</b>}
+      sidebar={<ContentSidebar />}
       open={sidebarOpen}
       onSetOpen={onSetSidebarOpen}
-      styles={{ sidebar: { background: "white" } }}
+      //styles={{ sidebar: { background: 'white' } }}
     >
-      <button onClick={() => onSetSidebarOpen(true)} className="navbar-toggler">
-        <i className="fa fa-toggle-right"></i>
+      <button onClick={() => onSetSidebarOpen(true)} className="btn btn-light btn-lg toggle">
+        <i className="fa fa-bars"></i>
       </button>
     </Sidebar>
   );
