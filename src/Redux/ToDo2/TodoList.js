@@ -1,7 +1,7 @@
-import React from "react"; // , { PropTypes }
+import React from 'react';
 
-export default function TodoList({ todos }) {
+export const TodoList = ({ todos }) => {
   const todoItems = todos.map((todo, i) => <li key={i}>{todo.title}</li>);
 
   return <ul>{todoItems}</ul>;
-}
+};

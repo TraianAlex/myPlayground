@@ -19,7 +19,7 @@ import reduxThunk from "redux-thunk";
 
 import TodoList from "../Redux/ToDo/App";
 import Pager from "../Redux/PagerApp/App";
-import TodoList2 from "../Redux/ToDo2/Main"; // Orelly
+import { TodoListRedux } from "../Redux/ToDo2/TodoListRedux"; // Orelly
 
 const store5 = createStore(shopReducer, applyMiddleware(reduxThunk));
 
@@ -52,4 +52,4 @@ storiesOf("Redux | Redux", module)
   ))
   .add("todoListFlux", () => <TodoList />)
   .add("pager", () => <Pager />)
-  .add("todoListRedux", () => <TodoList2 />);
+  .add("todoListRedux", () => <TodoListRedux />);

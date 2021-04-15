@@ -1,21 +1,21 @@
-import * as actionTypes from "./actionTypes";
+import * as actionTypes from './actionTypes';
 // import { resolveEach } from './reduxResolver'; // there is a package redux-resolver
-import { resolveEach } from "redux-resolver";
-import Immutable, { Map } from "immutable";
+import { resolveEach } from 'redux-resolver';
+import Immutable, { Map } from 'immutable';
 
 const initialState = Immutable.fromJS({
-  newTodo: "",
-  todos: [{ title: "Finish this project" }],
+  newTodo: '',
+  todos: [{ title: 'Finish this project' }],
 });
 
-function updateTodo(state, action) {
-  return state.set("newTodo", action.todo);
+const updateTodo = (state, action) => {
+  return state.set('newTodo', action.todo);
 }
 
-function createTodo(state, action) {
+const createTodo = (state, action) => {
   return state.merge({
-    newTodo: "",
-    todos: state.get("todos").push(Map({ title: action.todo })),
+    newTodo: '',
+    todos: state.get('todos').push(Map({ title: action.todo })),
   });
 }
 

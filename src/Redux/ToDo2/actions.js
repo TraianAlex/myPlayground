@@ -1,9 +1,9 @@
-import * as actionTypes from "./actionTypes";
+import * as actionTypes from './actionTypes';
 
-export function updateTodo(todo) {
+export const updateTodo = todo => {
   return { type: actionTypes.UPDATE_TODO, todo };
-}
+};
 
-export function createTodo(todo) {
+export const createTodo = todo => {
   return { type: actionTypes.CREATE_TODO, todo };
-}
+};

@@ -1,33 +1,32 @@
-import React, { Component } from "react"; // , PropTypes
-import TodoList from "./TodoList";
-import { connect } from "react-redux";
-import * as actions from "./actions";
+// @ts-nocheck
+import React from 'react';
+import { TodoList } from './TodoList';
+import { connect } from 'react-redux';
+import * as actions from './actions';
 
-export class App extends Component {
-  onChange = (e) => {
-    this.props.updateTodo(e.target.value);
+export const App = props => {
+  const onChange = ({ target }) => {
+    props.updateTodo(target.value);
   };
 
-  addTodo = (e) => {
+  const addTodo = e => {
     e.preventDefault();
-    this.props.createTodo(this.props.newTodo);
+    props.createTodo(props.newTodo);
   };
 
-  render() {
-    const { todos, newTodo } = this.props;
+  const { todos, newTodo } = props;
 
-    return (
-      <div>
-        <form onSubmit={this.addTodo.bind(this)}>
-          <input value={newTodo} onChange={this.onChange.bind(this)} />
-          <label>
-            Create todo: <span>{newTodo}</span>
-          </label>
-        </form>
-        <TodoList todos={todos} />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <form onSubmit={addTodo}>
+        <input value={newTodo} onChange={onChange} />
+        <label>
+          Create todo: <span>{newTodo}</span>
+        </label>
+      </form>
+      <TodoList todos={todos} />
+    </div>
+  );
+};
 
-export default connect((state) => state.toJS(), actions)(App);
+export default connect(state => state.toJS(), actions)(App);
