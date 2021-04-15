@@ -1,4 +1,32 @@
-import React, { Component } from "react"; // , PropTypes
+// @ts-nocheck
+import React, { useState, useEffect } from 'react';
+import { createStore } from './store';
+
+const Provider = props => {
+  const [state, setState] = useState();
+
+  useEffect(() => {
+    props.store.subscribe(() => setState(props.store.getState()));
+  });
+
+  return React.cloneElement(props.children, state);
+};
+
+const store = createStore();
+
+export const connect = (select = () => {}) => {
+  return Component => props => (
+    <Provider store={store}>
+      <Component
+        {...select(store.getState(), props)}
+        dispatch={store.dispatch}
+      />
+    </Provider>
+  );
+};
+
+/**************************************************************
+ import React, { Component } from "react";
 import createStore from "./store";
 
 export default class Provider extends Component {
@@ -24,4 +52,5 @@ export function connect(select = () => {}) {
       />
     </Provider>
   );
-}
+} 
+*/
