@@ -1,69 +1,70 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from 'react';
 
 // src/count/count-context.js
 
 const CountContext = createContext(null);
 
-function countReducer(state, action) {
+const countReducer = (state, action) => {
   switch (action.type) {
-    case "INCREMENT": {
+    case 'INCREMENT': {
       return { count: state.count + 1 };
     }
     default: {
       throw new Error(`Unsupported action type: ${action.type}`);
     }
   }
-}
+};
 
-function CountProvider(props) {
+const CountProvider = props => {
   const [state, dispatch] = useReducer(countReducer, { count: 0 });
+
   const value = React.useMemo(() => [state, dispatch], [state]);
 
   return <CountContext.Provider value={value} {...props} />;
-}
+};
 
-function useCount() {
+const useCount = () => {
   const context = useContext(CountContext);
   if (!context) {
     throw new Error(`useCount must be used within a CountProvider`);
   }
   const [state, dispatch] = context;
 
-  const increment = () => dispatch({ type: "INCREMENT" });
+  const increment = () => dispatch({ type: 'INCREMENT' });
 
   return {
     state,
     dispatch,
     increment,
   };
-}
+};
 
 // export {CountProvider, useCount}
 
-////////////////
+////////////////////////////////////////////////////////////////////////
 
 // src/count/page.js
 
 // import {CountProvider, useCount} from './count-context'
 
-function Counter() {
+const Counter = () => {
   const {
     state: { count },
     increment,
   } = useCount();
 
   return <button onClick={increment}>{count}</button>;
-}
+};
 
-function CountDisplay() {
+const CountDisplay = () => {
   const {
     state: { count },
   } = useCount();
 
   return <div>The current counter count is {count}</div>;
-}
+};
 
-function App() {
+const App = () => {
   return (
     <div>
       <CountProvider>
@@ -72,7 +73,7 @@ function App() {
       </CountProvider>
     </div>
   );
-}
+};
 
 export default App;
 

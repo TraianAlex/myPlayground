@@ -1,52 +1,53 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from 'react';
 
 // src/count/count-context.js
 const CountContext = createContext(null);
 
-function useCount() {
+const useCount = () => {
   const context = useContext(CountContext);
   if (!context) {
     throw new Error(`useCount must be used within a CountProvider`);
   }
   const [count, setCount] = context;
 
-  const increment = () => setCount((c) => c + 1);
+  const increment = () => setCount(c => c + 1);
 
   return {
     count,
     setCount,
     increment,
   };
-}
+};
 
-function CountProvider(props) {
-  const [count, setCount] = React.useState(0);
+const CountProvider = props => {
+  const [count, setCount] = useState(0);
+
   const value = React.useMemo(() => [count, setCount], [count]);
 
   return <CountContext.Provider value={value} {...props} />;
-}
+};
 
 // export {CountProvider, useCount}
 
-////////////////
+///////////////////////////////////////////////////////////////////////
 
 // src/count/page.js
 
 // import {CountProvider, useCount} from './count-context'
 
-function Counter() {
+const Counter = () => {
   const { count, increment } = useCount();
 
   return <button onClick={increment}>{count}</button>;
-}
+};
 
-function CountDisplay() {
+const CountDisplay = () => {
   const { count } = useCount();
 
   return <div>The current counter count is {count}</div>;
-}
+};
 
-function CountPage() {
+const CountPage = () => {
   return (
     <div>
       <CountProvider>
@@ -55,6 +56,6 @@ function CountPage() {
       </CountProvider>
     </div>
   );
-}
+};
 
 export default CountPage;

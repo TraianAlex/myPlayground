@@ -17,10 +17,10 @@ import Movies from "../Hooks/Context/App";
 import MiniStoreContext from "../Hooks/MiniStoreContext/App";
 import MaxIntro from "../Hooks/MaxIntro/App";
 
-//import App from './Components/StateManagement/1-simple-count';
-//import App from './Components/StateManagement/2-lift-state';
-//import App from './Components/StateManagement/3-context';
-//import App from './Components/StateManagement/4-context-with-logic';
+//import App from '../Hooks/Components/StateManagement/1-simple-count';
+//import App from '../Hooks/Components/StateManagement/2-lift-state';
+//import App from '../Hooks/Components/StateManagement/3-context';
+//import App from '../Hooks/Components/StateManagement/4-context-with-logic';
 import App from "../Hooks/Components/StateManagement/5-context-with-reducer";
 
 import { AppContact } from '../Hooks/KeyProp/Contact';
