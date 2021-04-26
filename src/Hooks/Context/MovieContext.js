@@ -1,29 +1,30 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useMemo } from 'react';
 
-export const MovieContext = createContext({});
+export const MovieContext = createContext([]);
 
-export function MovieProvider(props) {
-  const [movies, setMovies] = useState([
-    {
-      name: 'Herry Potter',
-      price: '$10',
-      id: 23124,
-    },
-    {
-      name: 'Game of Thornes',
-      price: '$10',
-      id: 2312445,
-    },
-    {
-      name: 'Inception',
-      price: '$10',
-      id: 2312422,
-    },
-  ]);
+const initialState = [
+  {
+    name: 'Herry Potter',
+    price: '$10',
+    id: 23124,
+  },
+  {
+    name: 'Game of Thornes',
+    price: '$10',
+    id: 2312445,
+  },
+  {
+    name: 'Inception',
+    price: '$10',
+    id: 2312422,
+  },
+];
+
+export function MovieProvider({ children }) {
+  const [movies, setMovies] = useState(initialState);
+  const value = useMemo(() => [movies, setMovies], [movies, setMovies]);
 
   return (
-    <MovieContext.Provider value={[movies, setMovies]}>
-      {props.children}
-    </MovieContext.Provider>
+    <MovieContext.Provider value={value}>{children}</MovieContext.Provider>
   );
 }

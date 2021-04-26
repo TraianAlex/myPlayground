@@ -1,10 +1,8 @@
-// @ts-nocheck
 import React, { useContext } from 'react';
 import { MovieContext } from './MovieContext';
 
 export default function Nav() {
-  // eslint-disable-next-line no-unused-vars
-  const [movies, setMovies] = useContext(MovieContext);
+  const [movies] = useContext(MovieContext);
 
   return (
     <div>

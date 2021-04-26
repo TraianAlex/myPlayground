@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useContext } from 'react';
 import { MovieContext } from './MovieContext';
 import { useInput } from './useInput';
@@ -8,8 +7,7 @@ const getRandomId = () => `${Math.random()}-${Math.random()}`;
 export default function AddMovie() {
   const { value: name, bind: bindName, reset: resetName } = useInput('');
   const { value: price, bind: bindPrice, reset: resetPrice } = useInput('');
-  // eslint-disable-next-line no-unused-vars
-  const [movies, setMovies] = useContext(MovieContext);
+  const [, setMovies] = useContext(MovieContext);
 
   const addMovie = e => {
     e.preventDefault();
@@ -18,10 +16,10 @@ export default function AddMovie() {
     }
     setMovies(prevMovies => [
       ...prevMovies,
-      { name: name, price: price, id: getRandomId },
+      { name: name, price: price, id: getRandomId() },
     ]);
-    resetName('');
-    resetPrice('');
+    resetName();
+    resetPrice();
   };
 
   return (
