@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { text } from "@storybook/addon-knobs";
 
-import { Game1 } from "../Diverse/Game-xo/Game1";
+import Game1 from "../Diverse/Game-xo/Game5";
 import PaymentForm from "../Diverse/UsefulComp/CreditCard";
 import { ListExample, ColumnExample } from "../Diverse/UsefulComp/ListExample";
 import { TabSimple, TabComponent } from "../Diverse/UsefulComp/Tabs";

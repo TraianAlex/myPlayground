@@ -1,5 +1,11 @@
-ol,
-ul {
+.game {
+  font: 14px 'Century Gothic', Futura, sans-serif;
+  margin: 20px;
+  min-height: 260px;
+}
+
+.game ol,
+.game ul {
   padding-left: 30px;
 }
 
@@ -11,6 +17,10 @@ ul {
 
 .status {
   margin-bottom: 10px;
+}
+
+.restart {
+  margin-top: 10px;
 }
 
 .square {
@@ -30,9 +40,10 @@ ul {
 
 .square:focus {
   outline: none;
+  background: #ddd;
 }
 
-.kbd-navigation .square:focus {
+.kbd-navigation {
   background: #ddd;
 }
 
@@ -43,4 +54,5 @@ ul {
 
 .game-info {
   margin-left: 20px;
+  min-width: 190px;
 }
