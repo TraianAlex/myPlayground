@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useEffect, useContext } from 'react';
 import TodoContext from './Context';
 
