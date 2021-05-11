@@ -1,17 +1,12 @@
-import React from "react";
+import React, { useEffect } from 'react';
 
-export class Enthused extends React.Component {
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      this.props.addText("!");
-    }, 15);
-  }
+export const Enthused = ({ addText, toggle }) => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      addText('!');
+    }, 200);
+    return () => clearInterval(interval);
+  }, [addText]);
 
-  componentWillUnmount(prevProps, prevState) {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    return <button onClick={this.props.toggle}>Stop!</button>;
-  }
-}
+  return <button onClick={() => toggle()}>Stop!</button>;
+};
