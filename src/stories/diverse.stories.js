@@ -13,6 +13,7 @@ import { GMap } from "../Diverse/GoogleMap/GMap";
 import { FetchEx } from "../Diverse/FetchBootstrap/FetchEx";
 import StarRating from "../Diverse/StarRating/App";
 import { TypeWritter } from "Diverse/UsefulComp/TypeWritter";
+import { TypeWritter2 } from "Diverse/UsefulComp/TypeWritter2";
 
 storiesOf("Diverse/Div", module)
   .add("game-xo", () => <Game1 />)
@@ -32,4 +33,5 @@ storiesOf("Diverse/Div", module)
   .add("googleMap", () => <GMap />)
   .add("fetchBoostrap", () => <FetchEx />)
   .add("starRating", () => <StarRating />)
-  .add("typeWritter", () => <TypeWritter />);
+  .add("typeWritter", () => <TypeWritter />)
+  .add("typeWritter2", () => <TypeWritter2 />);
