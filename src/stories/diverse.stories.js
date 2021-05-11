@@ -12,6 +12,7 @@ import { Modal1 } from "../Diverse/Modal/Modal1";
 import { GMap } from "../Diverse/GoogleMap/GMap";
 import { FetchEx } from "../Diverse/FetchBootstrap/FetchEx";
 import StarRating from "../Diverse/StarRating/App";
+import { TypeWritter } from "Diverse/UsefulComp/TypeWritter";
 
 storiesOf("Diverse/Div", module)
   .add("game-xo", () => <Game1 />)
@@ -30,4 +31,5 @@ storiesOf("Diverse/Div", module)
   .add("modal1", () => <Modal1 />)
   .add("googleMap", () => <GMap />)
   .add("fetchBoostrap", () => <FetchEx />)
-  .add("starRating", () => <StarRating />);
+  .add("starRating", () => <StarRating />)
+  .add("typeWritter", () => <TypeWritter />);
