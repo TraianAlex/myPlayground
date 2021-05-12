@@ -4,6 +4,19 @@ const words = ['Developer', 'Photographer', 'Creator'];
 const wait = '3000';
 
 export const TypeWritter2 = () => {
+  const [text, wordIndex, isDeleting, typeSpeed] = useTypeWritting(words, wait);
+
+  return (
+    <div>
+      <h1>The {text}</h1>
+      <p>wordIndex={wordIndex}</p>
+      <p>isDeleting={isDeleting ? 'true' : 'false'}</p>
+      <p>typeSpeed={typeSpeed}</p>
+    </div>
+  );
+};
+
+const useTypeWritting = (words, wait) => {
   const [text, setText] = useState('');
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -13,11 +26,9 @@ export const TypeWritter2 = () => {
     const current = wordIndex % words.length;
     const fullTxt = words[current];
 
-    if (isDeleting) {
-      setText(fullTxt.substring(0, text.length - 1));
-    } else {
-      setText(fullTxt.substring(0, text.length + 1));
-    }
+    isDeleting
+      ? setText(fullTxt.substring(0, text.length - 1))
+      : setText(fullTxt.substring(0, text.length + 1));
 
     setTypeSpeed(300);
 
@@ -40,15 +51,5 @@ export const TypeWritter2 = () => {
     return () => clearTimeout(id);
   });
 
-  return (
-    <div>
-      <h1>
-        The {text}
-        <span className="txt-type"></span>
-      </h1>
-      <p>wordIndex={wordIndex}</p>
-      <p>isDeleting={isDeleting ? 'true' : 'false'}</p>
-      <p>typeSpeed={typeSpeed}</p>
-    </div>
-  );
+  return [text, wordIndex, isDeleting, typeSpeed];
 };
