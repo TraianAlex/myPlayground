@@ -41,7 +41,9 @@ const useTypeWritting = (words, wait) => {
       setIsDeleting(true);
     } else if (isDeleting && text === '') {
       setIsDeleting(false);
-      setWordIndex(wordIndex + 1);
+      words.length > 1
+        ? setWordIndex(wordIndex === words.length - 1 ? 0 : wordIndex + 1)
+        : setWordIndex(0);
       setTypeSpeed(500);
     }
   };
