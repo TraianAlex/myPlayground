@@ -4,24 +4,24 @@ import MainNavigation from '../components/MainNavigation';
 import './Products.css';
 
 const ProductsPage = () => {
-  const context = useContext(ShopContext);
+  const {products, cart, addProductToCart} = useContext(ShopContext);
 
   return (
     <>
       <MainNavigation
-        cartItemNumber={context.cart.reduce((count, curItem) => {
+        cartItemNumber={cart.reduce((count, curItem) => {
           return count + curItem.quantity;
         }, 0)}
       />
       <main className="products">
         <ul>
-          {context.products.map(product => (
+          {products.map(product => (
             <li key={product.id}>
               <div>
                 <strong>{product.title}</strong> - ${product.price}
               </div>
               <div>
-                <button onClick={() => context.addProductToCart(product)}>
+                <button onClick={() => addProductToCart(product)}>
                   Add to Cart
                 </button>
               </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ShopContext from './shop-context';
 
-const GlobalState = (props) => {
+const GlobalState = props => {
   const [products] = useState([
     { id: 'p1', title: 'Gaming Mouse', price: 29.99 },
     { id: 'p2', title: 'Harry Potter 3', price: 9.99 },
