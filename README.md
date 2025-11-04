@@ -76,3 +76,6 @@ npm install -g json-server
 json-server --port 3001 generate.js
 
 http://localhost:3001/posts
+
+### project updated/fixed
+npm run storybook
