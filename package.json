@@ -27,7 +27,7 @@
     "react-modal": "^3.11.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.1",
+    "react-scripts": "5.0.1",
     "react-select": "^3.0.8",
     "react-sidebar": "^3.0.2",
     "react-slick": "^0.25.2",
@@ -73,14 +73,14 @@
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-console": "^1.2.1",
-    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-essentials": "^8.6.14",
     "@storybook/addon-info": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.12",
     "@storybook/addon-links": "^6.5.16",
     "@storybook/addon-notes": "^5.3.12",
     "@storybook/addon-storysource": "^5.3.12",
     "@storybook/addons": "^5.3.12",
-    "@storybook/react": "^6.5.16",
+    "@storybook/react": "^10.0.4",
     "@types/minimatch": "^5.1.2",
     "prop-types": "^15.8.1"
   }
