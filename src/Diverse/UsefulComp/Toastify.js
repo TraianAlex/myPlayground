@@ -19,9 +19,6 @@ export class Toastify extends Component {
 
 /*--------------------------------------------------------------------------*/
 
-// Call it once in your app. At the root of your app is the best place
-toast.configure();
-
 export const Toastify2 = () => {
   const notify2 = () => toast('Wow so easy2 !');
 
