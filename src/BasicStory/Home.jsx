@@ -1,14 +1,10 @@
 import React from "react";
-import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
 
-export default {
-  title: "Storybook Knobs",
-  decorators: [withKnobs],
-};
-
-const age = number("Age", 35);
-
-export const Home = () => (
+export const Home = ({
+  label = "This is my Home Page Component Hello Storybook",
+  age = 35,
+  disabled = false,
+}) => (
   <div
     style={{
       height: "200px",
@@ -17,11 +13,8 @@ export const Home = () => (
       backgroundColor: "yellow",
     }}
   >
-    <h1
-      onClick={() => console.log("Data:", 1, 3, 4)}
-      disabled={boolean("Disabled", false)}
-    >
-      {text("Label", "This is my Home Page Component Hello Storybook")}
+    <h1 onClick={() => console.log("Data:", 1, 3, 4)} disabled={disabled}>
+      {label}
       {age}
     </h1>
   </div>

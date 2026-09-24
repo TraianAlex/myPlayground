@@ -1,5 +1,12 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 import App from "../Max/ListCond/App";
 
-storiesOf("ListConditionalsMax", module).add("conditionals", () => <App />);
+const meta = {
+  title: "ListConditionalsMax",
+};
+export default meta;
+
+export const Conditionals = {
+  name: "conditionals",
+  render: () => <App />,
+};

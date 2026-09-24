@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormGroup, FormLabel, FormControl, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import "./Profile.css";
 
 export default class Profile extends Component {
@@ -55,9 +55,9 @@ export default class Profile extends Component {
         </Button>
         <hr />
         {this.state.editing ? (
-          <FormGroup>
-            <FormLabel>Name</FormLabel>
-            <FormControl
+          <Form.Group>
+            <Form.Label>Name</Form.Label>
+            <Form.Control
               type="text"
               className={
                 this.state.error && this.state.userInfo.bio === ""
@@ -68,8 +68,8 @@ export default class Profile extends Component {
               placeholder="Enter text"
               onChange={this.updateValue.bind(this, "name")}
             />
-            <FormLabel>Bio</FormLabel>
-            <FormControl
+            <Form.Label>Bio</Form.Label>
+            <Form.Control
               type="text"
               className={
                 this.state.error && this.state.userInfo.bio === ""
@@ -80,8 +80,8 @@ export default class Profile extends Component {
               placeholder="Enter text"
               onChange={this.updateValue.bind(this, "bio")}
             />
-            <FormLabel>Location</FormLabel>
-            <FormControl
+            <Form.Label>Location</Form.Label>
+            <Form.Control
               type="text"
               className={
                 this.state.error && this.state.userInfo.location === ""
@@ -92,8 +92,8 @@ export default class Profile extends Component {
               placeholder="Enter text"
               onChange={this.updateValue.bind(this, "location")}
             />
-            <FormLabel>Company</FormLabel>
-            <FormControl
+            <Form.Label>Company</Form.Label>
+            <Form.Control
               type="text"
               className={
                 this.state.error && this.state.userInfo.company === ""
@@ -107,7 +107,7 @@ export default class Profile extends Component {
             <Button variant="info" onClick={this.saveProfile.bind(this)}>
               Save
             </Button>
-          </FormGroup>
+          </Form.Group>
         ) : (
           <div>
             <p>

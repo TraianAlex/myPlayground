@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import "./Modal1.css";
 
-Modal.setAppElement("#root");
+Modal.setAppElement(document.getElementById("root") || document.body);
 
 export class Modal1 extends React.Component {
   state = {

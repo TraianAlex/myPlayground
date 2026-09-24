@@ -1,6 +1,7 @@
-const { themes } = require('@storybook/theming');
+import { themes } from "storybook/theming";
 
-module.exports = {
+/** @type { import('@storybook/react-webpack5').Preview } */
+const preview = {
   parameters: {
     controls: {
       matchers: {
@@ -13,3 +14,5 @@ module.exports = {
     },
   },
 };
+
+export default preview;

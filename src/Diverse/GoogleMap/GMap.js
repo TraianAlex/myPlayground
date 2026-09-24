@@ -1,39 +1,30 @@
-import React, { Component } from "react";
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-} from "react-google-maps";
+import React from "react";
+import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 
-// USE https://github.com/tomchentw/react-google-maps
-// Make a simple map and add to your interface
+const center = { lat: -34.397, lng: 150.644 };
 
-export class GMap extends Component {
-  render() {
-    const MyMapComponent = withScriptjs(
-      withGoogleMap((props) => (
-        <GoogleMap
-          defaultZoom={8}
-          defaultCenter={{ lat: -34.397, lng: 150.644 }}
-        >
-          {props.isMarkerShown && (
-            <Marker position={{ lat: -34.397, lng: 150.644 }} />
-          )}
-        </GoogleMap>
-      ))
-    );
+export function GMap() {
+  const { isLoaded, loadError } = useJsApiLoader({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY || "",
+  });
 
-    return (
-      <div style={{ padding: "40px" }}>
-        <MyMapComponent
-          isMarkerShown
-          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `400px` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        />
-      </div>
-    );
+  if (loadError) {
+    return <div style={{ padding: "40px" }}>Map failed to load.</div>;
   }
+
+  if (!isLoaded) {
+    return <div style={{ padding: "40px" }}>Loading map…</div>;
+  }
+
+  return (
+    <div style={{ padding: "40px" }}>
+      <GoogleMap
+        mapContainerStyle={{ width: "100%", height: "400px" }}
+        center={center}
+        zoom={8}
+      >
+        <Marker position={center} />
+      </GoogleMap>
+    </div>
+  );
 }

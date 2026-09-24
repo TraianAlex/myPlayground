@@ -1,3 +1,26 @@
+.TogglePersons {
+  background-color: green;
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.TogglePersons:hover {
+  background-color: lightgreen;
+  color: black;
+}
+
+.TogglePersons--open {
+  background-color: red;
+}
+
+.TogglePersons--open:hover {
+  background-color: salmon;
+  color: black;
+}
+
 .red {
   color: red;
 }

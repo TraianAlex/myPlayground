@@ -49,8 +49,8 @@ export default class RepLogCreator extends React.Component {
     const { quantityInputError } = this.state;
     return (
       <form onSubmit={this.handleFormSubmit}>
-        <div className="form-group">
-          <label className="control-label required">What did you lift?</label>
+        <div className="mb-3">
+          <label className="form-label required">What did you lift?</label>
           <select
             ref={this.itemSelect}
             className="form-control"
@@ -68,18 +68,18 @@ export default class RepLogCreator extends React.Component {
             })}
           </select>
         </div>
-        <div className={`form-group ${quantityInputError ? "has-error" : ""}`}>
-          <label className="control-label required">How many times?</label>
+        <div className="mb-3">
+          <label className="form-label required">How many times?</label>
           <input
             type="number"
             id="rep_log_reps"
             ref={this.quantityInput}
-            className="form-control"
+            className={`form-control${quantityInputError ? " is-invalid" : ""}`}
             required="required"
             placeholder="How many times?"
           />
           {quantityInputError && (
-            <span className="help-block">{quantityInputError}</span>
+            <span className="invalid-feedback d-block">{quantityInputError}</span>
           )}
         </div>
         <Button type="submit" className="btn-primary">

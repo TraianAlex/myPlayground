@@ -1,7 +1,4 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
-import { text } from "@storybook/addon-knobs";
-
 import Game1 from "../Diverse/Game-xo/Game5";
 import PaymentForm from "../Diverse/UsefulComp/CreditCard";
 import { ListExample, ColumnExample } from "../Diverse/UsefulComp/ListExample";
@@ -15,23 +12,90 @@ import StarRating from "../Diverse/StarRating/App";
 import { TypeWritter } from "../Diverse/UsefulComp/TypeWritter";
 import { TypeWritter2 } from "../Diverse/UsefulComp/TypeWritter2";
 
-storiesOf("Diverse/Div", module)
-  .add("game-xo", () => <Game1 />)
-  .add("paymentForm", () => <PaymentForm />)
-  .add("listExample", () => <ListExample />)
-  .add("columnExample", () => <ColumnExample />)
-  .add("tabs", () => {
-    const title = text("Title", "Banner Title");
-    return <TabSimple title={title} />;
-  })
-  .add("tabs2", () => <TabComponent />)
-  .add("sidebar", () => <SidebarComp />)
-  .add("responsiveSidebar", () => <RespSidebar />)
-  .add("toastify", () => <Toastify />)
-  .add("toastify2", () => <Toastify2 />)
-  .add("modal1", () => <Modal1 />)
-  .add("googleMap", () => <GMap />)
-  .add("fetchBoostrap", () => <FetchEx />)
-  .add("starRating", () => <StarRating />)
-  .add("typeWritter", () => <TypeWritter />)
-  .add("typeWritter2", () => <TypeWritter2 />);
+const meta = {
+  title: "Diverse/Div",
+};
+export default meta;
+
+export const GameXo = {
+  name: "game-xo",
+  render: () => <Game1 />,
+};
+
+export const PaymentFormStory = {
+  name: "paymentForm",
+  render: () => <PaymentForm />,
+};
+
+export const ListExampleStory = {
+  name: "listExample",
+  render: () => <ListExample />,
+};
+
+export const ColumnExampleStory = {
+  name: "columnExample",
+  render: () => <ColumnExample />,
+};
+
+export const Tabs = {
+  name: "tabs",
+  args: {
+    title: "Banner Title",
+  },
+  render: ({ title }) => <TabSimple title={title} />,
+};
+
+export const Tabs2 = {
+  name: "tabs2",
+  render: () => <TabComponent />,
+};
+
+export const Sidebar = {
+  name: "sidebar",
+  render: () => <SidebarComp />,
+};
+
+export const ResponsiveSidebar = {
+  name: "responsiveSidebar",
+  render: () => <RespSidebar />,
+};
+
+export const ToastifyStory = {
+  name: "toastify",
+  render: () => <Toastify />,
+};
+
+export const Toastify2Story = {
+  name: "toastify2",
+  render: () => <Toastify2 />,
+};
+
+export const Modal1Story = {
+  name: "modal1",
+  render: () => <Modal1 />,
+};
+
+export const GoogleMap = {
+  name: "googleMap",
+  render: () => <GMap />,
+};
+
+export const FetchBootstrap = {
+  name: "fetchBoostrap",
+  render: () => <FetchEx />,
+};
+
+export const StarRatingStory = {
+  name: "starRating",
+  render: () => <StarRating />,
+};
+
+export const TypeWritterStory = {
+  name: "typeWritter",
+  render: () => <TypeWritter />,
+};
+
+export const TypeWritter2Story = {
+  name: "typeWritter2",
+  render: () => <TypeWritter2 />,
+};

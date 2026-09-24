@@ -3,7 +3,6 @@ import "./App.css";
 import Person from "./Person";
 import Validation from "./Validation";
 import Char from "./Char";
-import Radium, { StyleRoot } from "radium";
 
 class App extends Component {
   state = {
@@ -60,19 +59,6 @@ class App extends Component {
   };
 
   render() {
-    const style = {
-      backgroundColor: "green",
-      color: "white",
-      font: "inherit",
-      border: "1px solid blue",
-      padding: "8px",
-      cursor: "pointer",
-      ":hover": {
-        backgroundColor: "lightgreen",
-        color: "black",
-      },
-    };
-
     let persons = null;
 
     if (this.state.showPersons) {
@@ -91,11 +77,6 @@ class App extends Component {
           })}
         </div>
       );
-      style.backgroundColor = "red";
-      style[":hover"] = {
-        backgroundColor: "salmon",
-        color: "black",
-      };
     }
 
     const charList = this.state.text.split("").map((ch, index) => {
@@ -117,12 +98,15 @@ class App extends Component {
       classes.push("bold");
     }
 
+    const buttonClass = this.state.showPersons
+      ? "TogglePersons TogglePersons--open"
+      : "TogglePersons";
+
     return (
-      <StyleRoot>
         <div className="App">
           <h1>Hi, I'm a React App</h1>
           <p className={classes.join(" ")}>This is really working!</p>
-          <button style={style} onClick={this.togglePersonsHandler}>
+          <button className={buttonClass} onClick={this.togglePersonsHandler}>
             Toggle Persons
           </button>
           {persons}
@@ -135,10 +119,9 @@ class App extends Component {
           <Validation textLength={this.state.text.length} />
           {charList}
         </div>
-      </StyleRoot>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
-export default Radium(App);
+export default App;
